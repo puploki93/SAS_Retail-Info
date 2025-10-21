@@ -10,16 +10,38 @@ Modern, SharePoint-inspired employee portal prototype for SAS Retail. The single
 
 ## Getting Started
 1. Clone the repo: `git clone git@github.com:puploki93/SAS_Retail-Info.git`
-2. Open `index.html` in any modern browser to explore the prototype locally.
-3. Adjust placeholder copy, icons, and button actions to point at live assets when available.
+2. Open `public/index.html` in any modern browser to explore the prototype locally.
+3. Update the static copy or sample data files to point at new assets as they become available.
 
 ### Project Structure
 ```
-SASretail/
-├── index.html     # Main application shell with tabbed sections
-├── styles.css     # Styling, layout, and responsive design rules
-└── script.js      # Navigation and simple demo interactions
+.
+├── public/
+│   ├── index.html          # Main application shell with tabbed sections
+│   ├── script.js           # Navigation and simple demo interactions
+│   └── styles.css          # Styling, layout, and responsive design rules
+├── content/
+│   └── assets/
+│       ├── docs/           # Normalized PDF references (policies, guides, etc.)
+│       ├── emails/         # Archived EML exports
+│       ├── media/          # Video or audio assets
+│       ├── slides/         # Slide decks and presentations
+│       ├── spreadsheets/   # XLSX payroll and planning resources
+│       └── projects/
+│           └── plv-2025-08-24/
+│               └── emails/ # Project-specific email PDFs sourced from field ops
+├── data/
+│   ├── policies.example.yaml   # Sample policy manifest
+│   └── projects/
+│       └── plv-2025-08-24.example.yaml   # Sample project manifest structure
+├── scripts/                # Automation stubs and future ingestion tooling
+└── PROJECT_PLAN.md         # Implementation playbook / source of truth
 ```
+
+### Sample Data Files
+- `data/projects/plv-2025-08-24.example.yaml` demonstrates how to capture store, travel, contacts, and attachment metadata for a deployment.
+- `data/policies.example.yaml` provides reference entries that map policy IDs to the normalized assets in `content/assets`.
+- Duplicate these examples, adjust IDs, and point to real assets before publishing manifests to production.
 
 ## Deployment
 The repository is ready for GitHub Pages or any static hosting platform. Publish by serving `index.html` and the accompanying assets at the site root.

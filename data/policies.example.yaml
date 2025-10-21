@@ -1,0 +1,30 @@
+policies:
+  - id: dress-code
+    title: Appearance & Dress Code
+    description: Expectations for in-store presentation, piercings, tattoos, and footwear.
+    path: content/assets/emails/company-dress-code-appearance-policy.eml
+    type: email
+    last_updated: "2024-11-01"
+  - id: travel-policy
+    title: Advantage Travel Policy (April 2025)
+    description: Comprehensive travel guidelines covering airfare, lodging, and rental cars.
+    path: content/assets/docs/advantage-travel-policy-2025-04-14.pdf
+    type: pdf
+    last_updated: "2025-04-14"
+  - id: time-reporting
+    title: Time Reporting Responsibilities
+    description: Reminder that associates must submit their own time in PROD.
+    path: content/assets/docs/leads-or-elites-cannot-report-your-time.pdf
+    type: pdf
+    last_updated: "2025-01-10"
+  - id: merchandiser-guide
+    title: Merchandiser Timekeeping Guide
+    description: Step-by-step instructions for logging time and expenses.
+    path: content/assets/docs/timekeeping-change-merchandiser-guide.pdf
+    type: pdf
+    last_updated: "2025-02-18"
+metadata:
+  version: 1
+  generated: "2025-10-21T16:00:00Z"
+  notes:
+    - Example data file. Duplicate and tailor to production policies as needed.

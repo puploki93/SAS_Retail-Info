@@ -47,32 +47,16 @@
             <p>Welcome to SAS Retail. Everything you need to get started.</p>
           </div>
         </header>
-        <div class="card-grid">
-          <article class="resource-card">
-            <div class="card-icon" aria-hidden="true">📄</div>
-            <h3>Welcome Packet</h3>
-            <p>Overview of SAS Retail, team introductions, and first-week tips.</p>
-            <button class="ghost-button">View</button>
-          </article>
-          <article class="resource-card">
-            <div class="card-icon" aria-hidden="true">🏢</div>
-            <h3>Team Structure</h3>
-            <p>Who&apos;s who in SAS Retail and how departments collaborate.</p>
-            <button class="ghost-button">Download</button>
-          </article>
-          <article class="resource-card">
-            <div class="card-icon" aria-hidden="true">🛍️</div>
-            <h3>Merchandiser Guide</h3>
-            <p>Field standards, merchandising checklists, and brand guidelines.</p>
-            <button class="ghost-button">View</button>
-          </article>
-          <article class="resource-card">
-            <div class="card-icon" aria-hidden="true">🎬</div>
-            <h3>Orientation Video</h3>
-            <p>Welcome message and walkthrough of SAS Retail systems.</p>
-            <button class="ghost-button">Watch</button>
-          </article>
-        </div>
+        <div class="info-grid" id="project-summary" role="region" aria-live="polite"></div>
+        <div class="info-grid" id="contact-grid" aria-live="polite"></div>
+        <section class="checklist" aria-label="Required actions">
+          <h3>Required Actions</h3>
+          <ul id="required-actions" class="checklist-items"></ul>
+        </section>
+        <section class="note-panel" aria-label="Project notes">
+          <h3>Notes &amp; Reminders</h3>
+          <ul id="project-notes"></ul>
+        </section>
       </section>
 
       <section class="tab-panel" id="docs" aria-labelledby="docs">
@@ -92,26 +76,11 @@
             <button type="submit">Search</button>
           </form>
         </header>
-        <div class="card-grid">
-          <article class="resource-card">
-            <div class="card-icon" aria-hidden="true">🗓️</div>
-            <h3>Payroll Calendar</h3>
-            <p>Important pay period dates and submission deadlines.</p>
-            <button class="ghost-button">View</button>
-          </article>
-          <article class="resource-card">
-            <div class="card-icon" aria-hidden="true">✈️</div>
-            <h3>Flight Prep Guide</h3>
-            <p>Travel checklists, packing tips, and airport procedures.</p>
-            <button class="ghost-button">Download</button>
-          </article>
-          <article class="resource-card">
-            <div class="card-icon" aria-hidden="true">🗂️</div>
-            <h3>Schedule Info</h3>
-            <p>Weekly schedules and reporting timelines for district teams.</p>
-            <button class="ghost-button">View</button>
-          </article>
-        </div>
+        <div class="card-grid" id="doc-grid" aria-live="polite"></div>
+        <section class="source-section" aria-label="Source emails">
+          <h3>Source Emails</h3>
+          <ul id="email-list" class="source-list"></ul>
+        </section>
       </section>
 
       <section class="tab-panel" id="travel" aria-labelledby="travel">
@@ -120,39 +89,21 @@
             <h2>Travel Center</h2>
             <p>Find all travel logistics, sample itineraries, and reimbursement forms.</p>
           </div>
-          <button class="primary-button" type="button">
-            Upload Document (Coming Soon)
+          <button class="primary-button" type="button" id="download-manifest">
+            Download Sample Manifest
           </button>
         </header>
-        <div class="card-grid">
-          <article class="resource-card">
-            <div class="card-icon" aria-hidden="true">🚗</div>
-            <h3>Carpool Responsibilities</h3>
-            <p>Expectations for drivers, passengers, and car-share scheduling.</p>
-            <button class="ghost-button">View Email</button>
-          </article>
-          <article class="resource-card">
-            <div class="card-icon" aria-hidden="true">🏨</div>
-            <h3>Hotel Directory</h3>
-            <p>Approved hotel partners with negotiated SAS Retail rates.</p>
-            <button class="ghost-button">Open PDF</button>
-          </article>
-          <article class="resource-card">
-            <div class="card-icon" aria-hidden="true">🧾</div>
-            <h3>Authorization Form</h3>
-            <p>Submit before booking travel for brand deployments and audits.</p>
-            <button class="ghost-button">Download</button>
-          </article>
-        </div>
-        <div class="preview-panel" role="region" aria-label="Featured preview">
-          <div class="preview-content">
-            <h3>Featured Preview</h3>
-            <p>
-              Embed quick previews of travel itineraries, hotel photos, or sample
-              receipts. Replace this space with an iframe or image gallery when
-              files are uploaded.
-            </p>
-          </div>
+        <div class="travel-layout" aria-live="polite">
+          <section class="travel-column" aria-label="Flight itineraries">
+            <h3>Flight Itineraries</h3>
+            <div id="flight-list" class="data-table"></div>
+          </section>
+          <section class="travel-column" aria-label="Hotel information">
+            <h3>Hotel Details</h3>
+            <div id="hotel-card" class="info-card"></div>
+            <h3>Carpool Assignments</h3>
+            <div id="carpool-list" class="info-card"></div>
+          </section>
         </div>
       </section>
 
@@ -163,32 +114,7 @@
             <p>SAS Retail policies, compliance guidelines, and conduct expectations.</p>
           </div>
         </header>
-        <div class="card-grid">
-          <article class="resource-card">
-            <div class="card-icon" aria-hidden="true">🧥</div>
-            <h3>Dress Code</h3>
-            <p>Guidance for in-store, travel, and corporate office attire.</p>
-            <button class="ghost-button">View</button>
-          </article>
-          <article class="resource-card">
-            <div class="card-icon" aria-hidden="true">📘</div>
-            <h3>Code of Conduct</h3>
-            <p>Professional standards and policies for SAS Retail teams.</p>
-            <button class="ghost-button">Download</button>
-          </article>
-          <article class="resource-card">
-            <div class="card-icon" aria-hidden="true">🔒</div>
-            <h3>Data Privacy Policy</h3>
-            <p>Protect customer data and secure retail partner information.</p>
-            <button class="ghost-button">View</button>
-          </article>
-          <article class="resource-card">
-            <div class="card-icon" aria-hidden="true">📝</div>
-            <h3>Reporting Procedures</h3>
-            <p>Incident reporting, escalation paths, and compliance contacts.</p>
-            <button class="ghost-button">View</button>
-          </article>
-        </div>
+        <div class="card-grid" id="policy-grid" aria-live="polite"></div>
       </section>
     </main>
 

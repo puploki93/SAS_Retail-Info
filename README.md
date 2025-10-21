@@ -43,6 +43,17 @@ Modern, SharePoint-inspired employee portal prototype for SAS Retail. The single
 - `data/policies.example.yaml` provides reference entries that map policy IDs to the normalized assets in `content/assets`.
 - Duplicate these examples, adjust IDs, and point to real assets before publishing manifests to production.
 
+### Tooling & Build Hooks
+- `scripts/ingest_emails.py` seeds a starter manifest by scanning the normalized asset folders:
+  ```bash
+  scripts/ingest_emails.py \
+    --project-id PLV-2025-08-24 \
+    --project-slug plv-2025-08-24 \
+    --output data/projects/plv-2025-08-24.yaml
+  ```
+  The `--format json` and `--dry-run` flags are available for quick previews or to emit JSON alongside YAML.
+- The front-end consumes static JSON feeds under `public/data/`. Regenerate these (or convert YAML → JSON during a future build step) so the UI reflects the latest manifests and policy catalog.
+
 ## Deployment
 The repository is ready for GitHub Pages or any static hosting platform. Publish by serving `index.html` and the accompanying assets at the site root.
 

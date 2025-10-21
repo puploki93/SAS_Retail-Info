@@ -1,0 +1,105 @@
+id: PLV-2025-08-24
+title: Playa Vista Remodel Deployment
+store:
+  number: 10536
+  name: Playa Vista CA Target
+  address: "12746 Jefferson Blvd, Playa Vista, CA 90094"
+  report_time: "2025-08-26T01:45:00-07:00"
+  notes:
+    - Meet merchandising supervisor at receiving entrance.
+    - Check in with store manager before accessing backroom.
+contacts:
+  supervisor:
+    name: Jessica Gamez
+    phone: "+1-802-917-3329"
+    email: jessica.gamez@sasretailservices.com
+  lead:
+    name: Daniel Augsburger
+    phone: "+1-760-336-6822"
+    email: daniel.augsburger@sasretailservices.com
+  elite:
+    name: Mary Franco
+    phone: "+1-408-648-3964"
+    email: marylou.franco@sasretailservices.com
+travel:
+  flights:
+    - traveler: Dillon Dority
+      confirmation: 2MQM3C
+      legs:
+        - depart_airport: AUS
+          arrive_airport: SNA
+          depart_time: "2025-08-24T09:10:00-05:00"
+          arrive_time: "2025-08-24T10:45:00-07:00"
+        - depart_airport: SNA
+          arrive_airport: AUS
+          depart_time: "2025-08-31T16:15:00-07:00"
+          arrive_time: "2025-08-31T21:05:00-05:00"
+    - traveler: Robert Noriega
+      confirmation: 2MQM3C
+      legs:
+        - depart_airport: AUS
+          arrive_airport: SNA
+          depart_time: "2025-08-24T09:10:00-05:00"
+          arrive_time: "2025-08-24T10:45:00-07:00"
+        - depart_airport: SNA
+          arrive_airport: AUS
+          depart_time: "2025-08-31T16:15:00-07:00"
+          arrive_time: "2025-08-31T21:05:00-05:00"
+  hotel:
+    name: Best Western Plus Orange County
+    address: "19360 Beach Blvd, Huntington Beach, CA 92648"
+    check_in: "2025-08-24"
+    check_out: "2025-08-31"
+    reservations:
+      - guest: Dillon Dority
+        confirmation: 73949281
+      - guest: Robert Noriega
+        confirmation: 73949282
+  carpool:
+    - driver: Robert Noriega
+      vehicle: Group Rental
+      riders:
+        - Dillon Dority
+      arrival_time: "2025-08-24T16:20:00-07:00"
+      airport_pickup: SNA
+policies:
+  references:
+    - dress-code
+    - time-reporting
+    - travel-policy
+required_actions:
+  - Contact assigned driver 24 hours before departure to confirm meetup time.
+  - Submit time worked in PROD immediately after each shift.
+  - Review Advantage Travel Policy prior to travel.
+attachments:
+  - title: Advantage Travel Policy (Updated 2025-04-14)
+    path: content/assets/docs/advantage-travel-policy-2025-04-14.pdf
+    type: pdf
+    mandatory: true
+  - title: Merchandiser Timekeeping Guide
+    path: content/assets/docs/timekeeping-change-merchandiser-guide.pdf
+    type: pdf
+    mandatory: true
+  - title: Team Structure Overview
+    path: content/assets/slides/team-structure.pptx
+    type: pptx
+    mandatory: false
+  - title: Travel Policy Call Outs Summary
+    path: content/assets/docs/travel-policy-call-outs.pdf
+    type: pdf
+    mandatory: true
+source_emails:
+  - type: schedule
+    path: content/assets/projects/plv-2025-08-24/emails/schedule-info-plv-2025-08-24.pdf
+  - type: carpool
+    path: content/assets/projects/plv-2025-08-24/emails/carpool-email-plv-2025.pdf
+  - type: flights
+    path: content/assets/projects/plv-2025-08-24/emails/flights-email-plv-2025.pdf
+  - type: hotel
+    path: content/assets/projects/plv-2025-08-24/emails/hotel-email-plv-2025.pdf
+  - type: welcome
+    path: content/assets/projects/plv-2025-08-24/emails/welcome-email-plv-2025.pdf
+last_updated: "2025-10-21T16:00:00Z"
+notes:
+  - This file is an example manifest illustrating preferred structure and field naming.
+  - Replace sample data with live project details before publishing to production.

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carpool & Transportation Packet · SAS Retail</title>
+  <style>
+    :root {
+      --brand-primary: #1f3faa;
+      --brand-accent: #5c6efc;
+      --text-primary: #132050;
+      --text-secondary: #54607a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+      background: linear-gradient(180deg, #eef2ff 0%, #fafbff 100%);
+      color: var(--text-primary);
+    }
+    header {
+      background: #15224f;
+      color: #fff;
+      padding: 32px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+    header h1 { margin: 0; font-size: 30px; }
+    header p { margin: 6px 0 0; color: rgba(255,255,255,0.75); max-width: 640px; }
+    header a.back-link {
+      color: #fff;
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.4);
+      border-radius: 999px;
+      padding: 8px 16px;
+      font-size: 14px;
+      transition: background 0.2s ease;
+    }
+    header a.back-link:hover { background: rgba(255,255,255,0.12); }
+    main {
+      max-width: 1000px;
+      margin: 32px auto;
+      padding: 0 32px 48px;
+      display: grid;
+      gap: 28px;
+    }
+    section {
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 16px 44px rgba(26, 46, 110, 0.12);
+      padding: 28px 32px;
+    }
+    section h2 {
+      margin: 0 0 14px;
+      font-size: 24px;
+      color: #14235b;
+    }
+    section p {
+      margin: 0 0 14px;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+    ul.checklist {
+      margin: 0;
+      padding-left: 20px;
+      color: var(--text-secondary);
+      line-height: 1.55;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+      font-size: 14px;
+    }
+    th, td {
+      border: 1px solid rgba(92,110,252,0.25);
+      padding: 10px 12px;
+      text-align: left;
+    }
+    th { background: rgba(92,110,252,0.12); color: #14235b; }
+    .callout {
+      border-left: 4px solid var(--brand-primary);
+      background: rgba(92,110,252,0.1);
+      padding: 12px 16px;
+      border-radius: 10px;
+      margin-top: 14px;
+    }
+    footer {
+      text-align: center;
+      color: #6b7896;
+      font-size: 13px;
+      padding-bottom: 36px;
+    }
+    @media (max-width: 768px) {
+      main { padding: 0 18px 48px; }
+      section { padding: 24px; }
+      table { display: block; overflow-x: auto; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <h1>Carpool &amp; Transportation Packet</h1>
+      <p>Clarify responsibilities for drivers and passengers and provide leadership with a clean roster template for travel-day coordination.</p>
+    </div>
+    <a class="back-link" href="travel.html">← Back to Travel Hub</a>
+  </header>
+  <main>
+    <section>
+      <h2>For Team Members</h2>
+      <p>Carpool etiquette keeps everyone moving on time.</p>
+      <ul class="checklist">
+        <li>Contact your driver and fellow passengers at least 24 hours before travel to confirm arrival times and meeting points.</li>
+        <li>Drivers are responsible for the rental car. No smoking, vaping, or unapproved upgrades.</li>
+        <li>Passengers must contribute to fuel costs. Save receipts—drivers submit them, not passengers.</li>
+        <li>Essential trips only: work site, airport, grocery, pharmacy, meals. Non-essential errands require rider-covered fuel and supervisor approval.</li>
+        <li>If you are delayed, notify your driver and leadership immediately. After 30 minutes without contact, vehicles may depart with leadership approval.</li>
+      </ul>
+      <div class="callout">
+        <strong>Safety reminder:</strong> Wear seat belts, obey traffic laws, and respect quiet hours. Keep vehicles clean and avoid leaving valuables inside.
+      </div>
+    </section>
+
+    <section>
+      <h2>Leadership Template</h2>
+      <p>Share the roster below when assigning carpools. Edit passenger lists, flight references, and hotel details before sending.</p>
+      <table>
+        <tr>
+          <th colspan="4">Vehicle Assignment</th>
+        </tr>
+        <tr>
+          <td>Driver</td>
+          <td>[Name · Phone]</td>
+          <td>Rental Confirmation</td>
+          <td>[e.g., National 34859271]</td>
+        </tr>
+        <tr>
+          <td>Hotel</td>
+          <td colspan="3">[Sonesta Select Laguna Hills · 23175 Avenida de la Carlota · 949-859-5500]</td>
+        </tr>
+      </table>
+      <table>
+        <tr>
+          <th>Passenger</th>
+          <th>Flight / Arrival Time</th>
+          <th>Notes</th>
+        </tr>
+        <tr>
+          <td>[Passenger Name]</td>
+          <td>[Flight # / ETA]</td>
+          <td>[Special instructions, baggage, pick-up location]</td>
+        </tr>
+        <tr>
+          <td>[Additional Passengers]</td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <div class="callout">
+        <strong>Leadership reminder:</strong> Drivers should not leave the airport without all passengers unless you approve. Include Patricia Booker and the Project Supervisor on all carpool messages.
+      </div>
+    </section>
+
+    <section>
+      <h2>Example Summary</h2>
+      <table>
+        <tr>
+          <th colspan="4">Carpool Group A · LAG Laguna Hills</th>
+        </tr>
+        <tr>
+          <th>Role</th>
+          <th>Name</th>
+          <th>Flight / Arrival</th>
+          <th>Notes</th>
+        </tr>
+        <tr>
+          <td>Driver</td>
+          <td>Robert Noriega · 310-555-0182</td>
+          <td>SWA 850 · Arrives 10:05 AM</td>
+          <td>Picks up rental at National · Van requested</td>
+        </tr>
+        <tr>
+          <td>Passenger</td>
+          <td>Dillon Dority</td>
+          <td>SWA 524 · Arrives 12:30 PM</td>
+          <td>Wait at baggage claim Carousel 2</td>
+        </tr>
+        <tr>
+          <td>Passenger</td>
+          <td>Jessica Gamez</td>
+          <td>Delta 1432 · Arrives 12:15 PM</td>
+          <td>Needs pharmacy stop (approved)</td>
+        </tr>
+      </table>
+    </section>
+  </main>
+  <footer>&copy; SAS Retail Special Projects</footer>
+</body>
+</html>

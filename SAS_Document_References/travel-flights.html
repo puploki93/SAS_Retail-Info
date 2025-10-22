@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flight Itinerary Packet · SAS Retail</title>
+  <style>
+    :root {
+      --brand-primary: #1f3faa;
+      --brand-accent: #5c6efc;
+      --text-primary: #132050;
+      --text-secondary: #54607a;
+      --surface: #f4f6ff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+      background: linear-gradient(180deg, #eef2ff 0%, #fafbff 100%);
+      color: var(--text-primary);
+    }
+    header {
+      background: #15224f;
+      color: #fff;
+      padding: 32px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+    header h1 { margin: 0; font-size: 30px; }
+    header p { margin: 6px 0 0; color: rgba(255,255,255,0.75); max-width: 640px; }
+    header a.back-link {
+      color: #fff;
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.4);
+      border-radius: 999px;
+      padding: 8px 16px;
+      font-size: 14px;
+      transition: background 0.2s ease;
+    }
+    header a.back-link:hover { background: rgba(255,255,255,0.12); }
+    main {
+      max-width: 1000px;
+      margin: 32px auto;
+      padding: 0 32px 48px;
+      display: grid;
+      gap: 28px;
+    }
+    section {
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 16px 44px rgba(26, 46, 110, 0.12);
+      padding: 28px 32px;
+    }
+    section h2 {
+      margin: 0 0 14px;
+      font-size: 24px;
+      color: #14235b;
+    }
+    section p {
+      margin: 0 0 14px;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+    ul.checklist {
+      margin: 0;
+      padding-left: 20px;
+      color: var(--text-secondary);
+      line-height: 1.55;
+    }
+    .callout {
+      border-left: 4px solid var(--brand-primary);
+      background: rgba(92,110,252,0.1);
+      padding: 12px 16px;
+      border-radius: 10px;
+      margin-top: 14px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+      font-size: 14px;
+    }
+    th, td {
+      border: 1px solid rgba(92,110,252,0.25);
+      padding: 10px 12px;
+      text-align: left;
+    }
+    th {
+      background: rgba(92,110,252,0.12);
+      color: #14235b;
+    }
+    footer {
+      text-align: center;
+      color: #6b7896;
+      font-size: 13px;
+      padding-bottom: 36px;
+    }
+    @media (max-width: 768px) {
+      main { padding: 0 18px 48px; }
+      section { padding: 24px; }
+      table { display: block; overflow-x: auto; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <h1>Flight Itinerary Packet</h1>
+      <p>Share travel-ready instructions with associates and streamline the way leadership distributes flight details. Copy the outline below into a fresh email or document, fill in specifics, and send.</p>
+    </div>
+    <a class="back-link" href="travel.html">← Back to Travel Hub</a>
+  </header>
+  <main>
+    <section>
+      <h2>For Team Members</h2>
+      <p>Review this checklist as soon as you receive your flight confirmation.</p>
+      <ul class="checklist">
+        <li>Confirm the itinerary matches your legal name and preferred airport. Report discrepancies immediately.</li>
+        <li>Check in 24 hours before departure using the airline app or website.</li>
+        <li>Plan to arrive at the airport <strong>1.5 hours before boarding time</strong> (you are paid for this window).</li>
+        <li>Keep receipts for baggage fees or parking and email them the same day.</li>
+        <li>Upon arrival at destination, send travel time in the required PROD format to your lead, elite, and supervisor.</li>
+      </ul>
+      <div class="callout">
+        <strong>Travel Help:</strong> If you encounter delays, missed flights, or gate changes, call your project supervisor immediately—do not rely on email alone. After hours, escalate per the travel policy call-outs.
+      </div>
+    </section>
+
+    <section>
+      <h2>Leadership Template</h2>
+      <p>Copy the following outline when sending flight itineraries. Replace bracketed placeholders with project-specific details.</p>
+      <table>
+        <tr>
+          <th colspan="2">Project Overview</th>
+        </tr>
+        <tr>
+          <td>Project Code</td>
+          <td>[Example: LAG]</td>
+        </tr>
+        <tr>
+          <td>Store / Location</td>
+          <td>[Example: Whole Foods Market – Laguna Hills, CA]</td>
+        </tr>
+        <tr>
+          <td>Travel Dates</td>
+          <td>[Depart: Mon 05/27/2025 · Return: Sat 05/31/2025]</td>
+        </tr>
+      </table>
+      <table>
+        <tr>
+          <th>Associate</th>
+          <th>Confirmation #</th>
+          <th>Airline</th>
+          <th>Depart Flight</th>
+          <th>Return Flight</th>
+        </tr>
+        <tr>
+          <td>[Full Name]</td>
+          <td>[e.g., 2MQM3C]</td>
+          <td>[e.g., Southwest]</td>
+          <td>[AUS → SNA · Mon 05/27 · 10:20 AM – 12:30 PM]</td>
+          <td>[SNA → AUS · Sat 05/31 · 2:45 PM – 7:55 PM]</td>
+        </tr>
+        <tr>
+          <td>[Add rows for additional travelers]</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <div class="callout">
+        <strong>Reminder for leaders:</strong> Attach boarding passes or airline PDFs when available. Include Patricia Booker on all itineraries so she can support weekend travel issues.
+      </div>
+    </section>
+
+    <section>
+      <h2>Example Summary</h2>
+      <p>Use the sample below when preparing communications.</p>
+      <table>
+        <tr>
+          <th colspan="5">LAG · Whole Foods Laguna Hills · Week of 05/27/2025</th>
+        </tr>
+        <tr>
+          <th>Associate</th>
+          <th>Confirmation</th>
+          <th>Outbound</th>
+          <th>Return</th>
+          <th>Notes</th>
+        </tr>
+        <tr>
+          <td>Dillon Dority</td>
+          <td>2MQM3C</td>
+          <td>SWA 524 · AUS 10:20 AM → SNA 12:30 PM</td>
+          <td>SWA 715 · SNA 2:45 PM → AUS 7:55 PM</td>
+          <td>Arrives with Carpool Group A</td>
+        </tr>
+        <tr>
+          <td>Robert Noriega</td>
+          <td>8FJ2KL</td>
+          <td>SWA 850 · PHX 9:05 AM → SNA 10:05 AM</td>
+          <td>SWA 985 · SNA 5:10 PM → PHX 6:15 PM</td>
+          <td>Designated Driver · National confirmation pending</td>
+        </tr>
+      </table>
+    </section>
+  </main>
+  <footer>&copy; SAS Retail Special Projects</footer>
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SAS Retail Travel Hub</title>
+  <style>
+    :root {
+      --brand-primary: #1f3faa;
+      --brand-accent: #5c6efc;
+      --surface: #eef2ff;
+      --text-primary: #141d3f;
+      --text-secondary: #4f5c7a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+      background: linear-gradient(180deg, #eef2ff 0%, #fafbff 100%);
+      color: var(--text-primary);
+    }
+    header {
+      background: #15224f;
+      color: #fff;
+      padding: 32px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+    header h1 { margin: 0; font-size: 32px; }
+    header p { margin: 6px 0 0; color: rgba(255,255,255,0.75); max-width: 640px; }
+    header a.back-link {
+      color: #fff;
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.4);
+      border-radius: 999px;
+      padding: 8px 16px;
+      font-size: 14px;
+      transition: background 0.2s ease;
+    }
+    header a.back-link:hover { background: rgba(255,255,255,0.12); }
+    main {
+      max-width: 1100px;
+      margin: 32px auto;
+      padding: 0 32px 48px;
+      display: grid;
+      gap: 28px;
+    }
+    section {
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 16px 44px rgba(26, 46, 110, 0.12);
+      padding: 26px 30px 32px;
+    }
+    section h2 {
+      margin: 0 0 18px;
+      font-size: 24px;
+      color: #14235b;
+    }
+    p.description {
+      margin: 0 0 18px;
+      color: var(--text-secondary);
+      line-height: 1.45;
+    }
+    .resource-grid {
+      display: grid;
+      gap: 18px;
+    }
+    .resource-card {
+      border-radius: 14px;
+      padding: 18px 20px;
+      background: linear-gradient(135deg, rgba(92,110,252,0.13), rgba(92,110,252,0));
+      border: 1px solid rgba(92,110,252,0.2);
+      display: grid;
+      gap: 8px;
+    }
+    .resource-card h3 {
+      margin: 0;
+      font-size: 18px;
+      color: #14235b;
+    }
+    .resource-card p {
+      margin: 0;
+      color: var(--text-secondary);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    .resource-card a {
+      justify-self: start;
+      margin-top: 6px;
+      text-decoration: none;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: var(--brand-primary);
+      color: #fff;
+      font-weight: 600;
+      font-size: 14px;
+      transition: background 0.2s ease;
+    }
+    .resource-card a:hover { background: var(--brand-accent); }
+    footer {
+      text-align: center;
+      color: #6b7896;
+      font-size: 13px;
+      padding: 0 0 36px 0;
+    }
+    @media (max-width: 768px) {
+      main { padding: 0 18px 48px; }
+      section { padding: 22px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <h1>Travel Hub</h1>
+      <p>Guides, policies, and ready-to-send outlines for flights, hotels, and carpools. Use these resources to keep travel communication clear for both team members and leadership.</p>
+    </div>
+    <a class="back-link" href="index.html">← Back to Document Hub</a>
+  </header>
+  <main>
+    <section>
+      <h2>Quick Links</h2>
+      <div class="resource-grid">
+        <div class="resource-card">
+          <h3>Travel Team Handbook</h3>
+          <p>Complete rules for scheduling cadence, attendance, and project expectations.</p>
+          <a href="SAS/Project Details/Docs  copy/2025 SAS WFM Remodel Travel Team.pdf">Open Handbook</a>
+        </div>
+        <div class="resource-card">
+          <h3>Preparing for Flight Travel</h3>
+          <p>Step-by-step walkthrough for new travelers, from check-in to layovers.</p>
+          <a href="SAS/Project Details/Docs  copy/Preparing for Flight Travel.pdf">View Guide</a>
+        </div>
+        <div class="resource-card">
+          <h3>Travel Policy Call-Outs</h3>
+          <p>At-a-glance review of must-follow travel rules and restrictions.</p>
+          <a href="SAS/Welcome To the Team /Docs /TRAVEL POLICY CALL OUTS.pdf">Read Policy</a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Communication Toolkits</h2>
+      <p class="description">Use these templates to share consistent, professional travel details. Each guide includes information employees need plus a leadership-ready outline you can copy into a new message.</p>
+      <div class="resource-grid">
+        <div class="resource-card">
+          <h3>Flight Itinerary Packet</h3>
+          <p>Employee instructions for day-of-travel and a leadership template with fill-in sections for flight details.</p>
+          <a href="travel-flights.html">Open Flight Packet</a>
+        </div>
+        <div class="resource-card">
+          <h3>Hotel Confirmation Packet</h3>
+          <p>Check-in reminders, room rules, and a structured summary format for sending hotel assignments.</p>
+          <a href="travel-hotels.html">Open Hotel Packet</a>
+        </div>
+        <div class="resource-card">
+          <h3>Carpool &amp; Transportation Packet</h3>
+          <p>Guidelines for drivers/passengers plus an editable roster template for leadership.</p>
+          <a href="travel-carpool.html">Open Carpool Packet</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>&copy; SAS Retail Special Projects</footer>
+</body>
+</html>

@@ -5,202 +5,260 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SAS Retail Document Hub</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f5f7fa; color: #1f2933; }
-    header { background: #0b3d91; color: #fff; padding: 24px 32px; }
-    header h1 { margin: 0 0 8px 0; font-size: 28px; }
-    header p { margin: 0; font-size: 15px; }
-    main { padding: 24px 32px 48px; max-width: 1100px; margin: 0 auto; }
-    section { background: #fff; border-radius: 10px; box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08); margin-bottom: 24px; padding: 24px; }
-    section h2 { margin-top: 0; font-size: 22px; color: #0b3d91; }
-    ul { list-style: none; padding-left: 0; margin: 16px 0 0; }
-    li { margin-bottom: 10px; }
-    a { color: #0b3d91; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .questionnaire table { width: 100%; border-collapse: collapse; }
-    .questionnaire td { padding: 6px 8px; vertical-align: top; }
-    .questionnaire input[type="text"],
-    .questionnaire input[type="email"],
-    .questionnaire input[type="tel"],
-    .questionnaire input[type="date"],
-    .questionnaire textarea {
+    :root {
+      color-scheme: light;
+      --brand-primary: #1f3faa;
+      --brand-accent: #5c6efc;
+      --surface: #f2f4fb;
+      --card-bg: #ffffff;
+      --text-primary: #17223a;
+      --text-secondary: #51607a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+      background: var(--surface);
+      color: var(--text-primary);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .layout {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      max-width: 1400px;
+      margin: 0 auto;
       width: 100%;
-      padding: 8px;
-      border: 1px solid #cbd5e1;
-      border-radius: 6px;
+      background: #fff;
+      box-shadow: 0 20px 60px rgba(15, 35, 95, 0.15);
+      border-radius: 18px;
+      overflow: hidden;
+      margin-top: 32px;
+      margin-bottom: 32px;
+    }
+    @media (max-width: 1024px) {
+      .layout {
+        grid-template-columns: 1fr;
+        margin: 0;
+        border-radius: 0;
+        box-shadow: none;
+      }
+    }
+    aside {
+      background: linear-gradient(180deg, #141b3f 0%, #1b2e70 100%);
+      color: #f5f7ff;
+      padding: 32px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .brand span {
       font-size: 14px;
-      box-sizing: border-box;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.6);
     }
-    .questionnaire textarea { resize: vertical; }
-    .questionnaire .actions { margin-top: 16px; }
-    .questionnaire button {
-      padding: 10px 18px;
-      border: none;
-      border-radius: 6px;
+    .brand h1 {
+      margin: 0;
+      font-size: 26px;
+      color: #fff;
+    }
+    .search-box {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      padding: 10px 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 14px;
+    }
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    nav a {
+      color: rgba(255, 255, 255, 0.8);
+      text-decoration: none;
       font-size: 15px;
-      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 0;
+      transition: color 0.2s ease;
     }
-    .questionnaire button[type="submit"] { background: #0b3d91; color: #fff; margin-right: 10px; }
-    .questionnaire button[type="reset"] { background: #e2e8f0; color: #0f172a; }
-    footer { text-align: center; color: #475569; font-size: 13px; padding: 24px 0 32px; }
+    nav a:hover { color: #fff; }
+    .sidebar-footer {
+      margin-top: auto;
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.55);
+    }
+    main {
+      padding: 36px 48px 48px;
+      background: linear-gradient(180deg, #eef2ff 0%, #f8f9ff 100%);
+    }
+    @media (max-width: 768px) {
+      main { padding: 28px 20px 48px; }
+    }
+    .hero {
+      margin-bottom: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .hero h2 {
+      margin: 0;
+      font-size: 34px;
+      font-weight: 700;
+      color: #14235b;
+    }
+    .hero p {
+      margin: 0;
+      color: var(--text-secondary);
+      max-width: 620px;
+      line-height: 1.5;
+    }
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: var(--card-bg);
+      border-radius: 18px;
+      box-shadow: 0 18px 45px rgba(25, 47, 120, 0.12);
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      position: relative;
+      overflow: hidden;
+    }
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(92,110,252,0.14), rgba(255,255,255,0));
+      pointer-events: none;
+    }
+    .card h3 {
+      margin: 0;
+      font-size: 20px;
+      color: #14235b;
+    }
+    .card p {
+      margin: 0;
+      color: var(--text-secondary);
+      line-height: 1.45;
+      font-size: 14px;
+    }
+    .card a.button {
+      margin-top: auto;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: var(--brand-primary);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      width: fit-content;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+    .card a.button:hover {
+      background: var(--brand-accent);
+      transform: translateY(-1px);
+    }
+    footer {
+      text-align: center;
+      color: #6b7896;
+      font-size: 13px;
+      padding-bottom: 24px;
+    }
   </style>
 </head>
 <body>
-  <header>
-    <h1>SAS Retail Document Hub</h1>
-    <p>Central access to onboarding, travel, and operations resources for the SAS Retail Special Projects team.</p>
-  </header>
-  <main>
-    <section>
-      <h2>01 · Welcome &amp; Orientation</h2>
-      <ul>
-        <li><a href="SAS/Welcome%20To%20the%20Team%20/Emails/Welcome%20Email%20example.pdf">Welcome Email template</a> — Initial onboarding message with required tasks and questionnaire.</li>
-        <li><a href="SAS/Welcome%20To%20the%20Team%20/Docs%20/Ready%20to%20work%20email%20example.pdf">Ready to Start Working overview</a> — What to expect once onboarding steps are complete.</li>
-        <li><a href="SAS/Welcome%20To%20the%20Team%20/Docs%20/Team%20Structure.pptx">Team Structure slide deck</a> — Leadership roles and escalation ladder.</li>
-        <li><a href="SAS/Welcome%20To%20the%20Team%20/Docs%20/074606-240x514.mp4">Intro video</a> — Welcome overview for new hires.</li>
-      </ul>
-    </section>
+  <div class="layout">
+    <aside>
+      <div class="brand">
+        <span>SAS Retail</span>
+        <h1>Special Projects Hub</h1>
+      </div>
+      <div class="search-box">🔎 Search resources</div>
+      <nav>
+        <ul>
+          <li><a href="#welcome">Welcome Overview</a></li>
+          <li><a href="onboarding.html">New Hire Center</a></li>
+          <li><a href="#policies">Policies &amp; Guides</a></li>
+          <li><a href="#travel">Travel Resources</a></li>
+          <li><a href="#timekeeping">Timekeeping &amp; Payroll</a></li>
+          <li><a href="#reference">Reference Library</a></li>
+        </ul>
+      </nav>
+      <div class="sidebar-footer">
+        For updates or corrections, contact the SAS Retail Special Projects leadership team.
+      </div>
+    </aside>
+    <main>
+      <section class="hero" id="welcome">
+        <h2>Welcome to the SAS Retail Intranet</h2>
+        <p>Your single location for onboarding material, policy libraries, travel logistics, and field operations guidance for the Special Projects team.</p>
+      </section>
+      <section class="card-grid">
+        <article class="card" id="policies">
+          <h3>Policies Library</h3>
+          <p>Access appearance expectations, company travel standards, and weekly schedule communications in one place.</p>
+          <a class="button" href="SAS/Project Details/Docs  copy/2025 SAS WFM Remodel Travel Team.pdf">Open Policies</a>
+        </article>
 
-    <section class="questionnaire">
-      <h2>New Hire Questionnaire</h2>
-      <p>Complete the form and click <strong>Submit Questionnaire</strong>. Your default mail client opens a message addressed to <code>admin@sasretail.com</code> with your responses. Review and send to finish.</p>
-      <form action="mailto:admin@sasretail.com" method="post" enctype="text/plain">
-        <table>
-          <tr>
-            <td><label for="name">First &amp; Last Name (as on ID):</label></td>
-            <td><input type="text" id="name" name="FirstLastName" required></td>
-          </tr>
-          <tr>
-            <td><label for="sex">Sex on Real ID:</label></td>
-            <td><input type="text" id="sex" name="SexOnID" required></td>
-          </tr>
-          <tr>
-            <td><label for="idvalid">Valid photo ID / passport?</label></td>
-            <td><input type="text" id="idvalid" name="ValidIDorPassport" required></td>
-          </tr>
-          <tr>
-            <td><label for="dob">Date of Birth:</label></td>
-            <td><input type="date" id="dob" name="DOB" required></td>
-          </tr>
-          <tr>
-            <td><label for="address">Full Address:</label></td>
-            <td><textarea id="address" name="FullAddress" rows="2" required></textarea></td>
-          </tr>
-          <tr>
-            <td><label for="email">Preferred Email (matches Oracle):</label></td>
-            <td><input type="email" id="email" name="PreferredEmail" required></td>
-          </tr>
-          <tr>
-            <td><label for="phone">Preferred Phone (matches Oracle):</label></td>
-            <td><input type="tel" id="phone" name="PreferredPhone" required></td>
-          </tr>
-          <tr>
-            <td><label for="airport">Closest Major Airport:</label></td>
-            <td><input type="text" id="airport" name="ClosestAirport" required></td>
-          </tr>
-          <tr>
-            <td><label for="emergency">Emergency Contact (name, relationship, phone):</label></td>
-            <td><textarea id="emergency" name="EmergencyContact" rows="2" required></textarea></td>
-          </tr>
-          <tr>
-            <td><label for="languages">Other languages spoken:</label></td>
-            <td><input type="text" id="languages" name="OtherLanguages"></td>
-          </tr>
-          <tr>
-            <td><label for="shirt">Polo Shirt Size:</label></td>
-            <td><input type="text" id="shirt" name="PoloSize" required></td>
-          </tr>
-          <tr>
-            <td><label for="transport">Do you have reliable transportation?</label></td>
-            <td><input type="text" id="transport" name="ReliableTransportation" required></td>
-          </tr>
-          <tr>
-            <td><label for="localwork">Willing to work local (≤ 6 hr drive)?</label></td>
-            <td><input type="text" id="localwork" name="LocalWork" required></td>
-          </tr>
-          <tr>
-            <td><label for="license">Valid driver’s license?</label></td>
-            <td><input type="text" id="license" name="ValidLicense" required></td>
-          </tr>
-          <tr>
-            <td><label for="driver">Able to be rental car driver?</label></td>
-            <td><input type="text" id="driver" name="ResponsibleDriver" required></td>
-          </tr>
-          <tr>
-            <td><label for="rentalstatus">Owe fees / on do-not-rent list?</label></td>
-            <td><input type="text" id="rentalstatus" name="RentalStatus" required></td>
-          </tr>
-          <tr>
-            <td><label for="timeoff">Upcoming dates needing off (through Dec 31):</label></td>
-            <td><textarea id="timeoff" name="UpcomingTimeOff" rows="3"></textarea></td>
-          </tr>
-          <tr>
-            <td><label for="notes">Additional notes / questions:</label></td>
-            <td><textarea id="notes" name="AdditionalNotes" rows="3"></textarea></td>
-          </tr>
-        </table>
-        <div class="actions">
-          <button type="submit">Submit Questionnaire</button>
-          <button type="reset">Reset Form</button>
-        </div>
-      </form>
-    </section>
+        <article class="card">
+          <h3>Employee Relations</h3>
+          <p>Review escalation guidelines, communication expectations, and leadership contacts to keep projects running smoothly.</p>
+          <a class="button" href="SAS/Project Details/Docs  copy/**When to Call verses When to Email**.eml">View Guidance</a>
+        </article>
 
-    <section>
-      <h2>02 · Travel Preparation</h2>
-      <ul>
-        <li><a href="SAS/Project%20Details/Docs%20%20copy/2025%20SAS%20WFM%20Remodel%20Travel%20Team.pdf">2025 SAS WFM Remodel Travel Team handbook</a> — Full playbook covering scheduling, travel, attendance, and on-site expectations.</li>
-        <li><a href="SAS/Project%20Details/Docs%20%20copy/Preparing%20for%20Flight%20Travel.pdf">Preparing for Flight Travel guide</a> — Step-by-step instructions for first-time flyers.</li>
-        <li><a href="SAS/Welcome%20To%20the%20Team%20/Docs%20/TRAVEL%20POLICY%20CALL%20OUTS.pdf">Travel policy call-outs</a> — Fast reference of must-not-do items for hotels, rentals, and attire.</li>
-        <li><a href="SAS/Welcome%20To%20the%20Team%20/Docs%20/Advantage%20Travel%20Policy%20%28updated%204.14.2025%29.pdf">Advantage corporate travel policy</a> — Enterprise requirements for expenses, receipts, and professional conduct.</li>
-      </ul>
-    </section>
+        <article class="card">
+          <h3>New Hire Center</h3>
+          <p>Start strong with welcome briefings, training links, and the mandatory questionnaire for newly activated team members.</p>
+          <a class="button" href="onboarding.html">Open New Hire Hub</a>
+        </article>
 
-    <section>
-      <h2>03 · Travel Logistics &amp; Templates</h2>
-      <ul>
-        <li><a href="SAS/Travel%20%26%20Lodging%20/Emails/Flights%20Email%20Example.pdf">Flight itinerary email example</a> — Reference layout for outbound flight notices.</li>
-        <li><a href="SAS/Travel%20%26%20Lodging%20/Emails/Hotels%20email%20example.pdf">Hotel confirmation email example</a> — Sample wording for CLC lodging reservations.</li>
-        <li><a href="SAS/Travel%20%26%20Lodging%20/Emails/Carpool%20Email%20example.pdf">Carpool coordination email example</a> — Template for assigning drivers and riders.</li>
-        <li><a href="SAS/Project%20Details/Email/Gmail%20-%20%28PLV%29%20SCHEDULE%20INFO:%20Store,%20Contact%20%26%20Shift%20Details%20-%20NEXT%20Week%20of%208.24.2025%20Playa%20Vista,%20CA.pdf">Weekly schedule project email example</a> — Structure for store/shift detail emails.</li>
-      </ul>
-    </section>
+        <article class="card" id="travel">
+          <h3>Travel &amp; Logistics</h3>
+          <p>Find flight prep guides, rental car expectations, and sample communications for carpools and hotels.</p>
+          <a class="button" href="SAS/Travel & Lodging /Emails/Flights Email Example.pdf">Explore Travel Docs</a>
+        </article>
 
-    <section>
-      <h2>04 · On the Road</h2>
-      <ul>
-        <li><a href="SAS/We%20provide%20GROUP%20rental%20cars%20for%20work%20related%20purposes%20to%20ensure%20you%20have%20transportation%20when%20out%20on%20a%20project.pdf">Group rental car guidelines</a> — Responsibilities for designated drivers and passengers.</li>
-        <li><a href="SAS/To%20call%3F%20or%20To%20Email%3F.pdf">Travel communication rules (PDF)</a> — When to escalate by phone versus email.</li>
-        <li><a href="SAS/Project%20Details/Docs%20%20copy/%2A%2AWhen%20to%20Call%20verses%20When%20to%20Email%2A%2A.eml">Travel communication rules (email archive)</a> — Original message with scenarios and follow-up expectations.</li>
-      </ul>
-    </section>
+        <article class="card" id="timekeeping">
+          <h3>Timekeeping &amp; Payroll</h3>
+          <p>Learn how to punch your time in PROD, report travel, and stay on top of payroll deadlines.</p>
+          <a class="button" href="SAS/Leads or Elites CANNOT report your time for you.pdf">Review Instructions</a>
+        </article>
 
-    <section>
-      <h2>05 · On-Site Expectations</h2>
-      <ul>
-        <li><a href="SAS/Project%20Details/Docs%20%20copy/%2A%2ACompany%20Dress%20Code_Appearance%20Policy%2A%2A.eml">Company dress code &amp; appearance policy email</a> — Enforcement guidance for facial piercings, tattoos, and attire.</li>
-        <li><a href="SAS/Project%20Details/Docs%20%20copy/2025%20SAS%20WFM%20Remodel%20Travel%20Team.pdf">Travel team handbook — On-site section</a> — See chapters on break management, tool requirements, and sales floor conduct.</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>06 · Timekeeping &amp; Payroll</h2>
-      <ul>
-        <li><a href="SAS/Leads%20or%20Elites%20CANNOT%20report%20your%20time%20for%20you.pdf">Time reporting mandate</a> — Reminder that associates must submit their own punches and travel time.</li>
-        <li><a href="SAS/Welcome%20To%20the%20Team%20/Docs%20/Timekeeping%20Change%20-%20Merchandiser%20Guide.pdf">Timekeeping change guide</a> — PIN setup and BYOD punching walkthrough.</li>
-        <li><a href="SAS/Project%20Details/Docs%20%20copy/Time%20Off_Payroll%20Calendar%202025.pdf">Time off &amp; payroll calendar 2025</a> — Submission deadlines for time-off requests.</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>07 · Reference Library</h2>
-      <ul>
-        <li><a href="SAS/Project%20Details/Email/Gmail%20-%20%28PLV%29%20SCHEDULE%20INFO:%20Store,%20Contact%20%26%20Shift%20Details%20-%20NEXT%20Week%20of%208.24.2025%20Playa%20Vista,%20CA.pdf">Schedule email archive</a> — Use for wording and attachment checklist.</li>
-        <li><a href="SAS/">Full SAS directory</a> — Browse every file if you need supporting material not summarized above.</li>
-      </ul>
-    </section>
-  </main>
+        <article class="card" id="reference">
+          <h3>Reference Library</h3>
+          <p>Dive into the full document archive, including project schedules and template communications.</p>
+          <a class="button" href="SAS/">Browse Directory</a>
+        </article>
+      </section>
+    </main>
+  </div>
   <footer>
-    &copy; SAS Retail Special Projects. For updates or corrections, contact the leadership team.
+    &copy; SAS Retail Special Projects
   </footer>
 </body>
 </html>

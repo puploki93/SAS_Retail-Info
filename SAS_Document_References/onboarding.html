@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SAS Retail New Hire Hub</title>
+  <style>
+    :root {
+      --brand-primary: #1f3faa;
+      --brand-accent: #5c6efc;
+      --surface: #f7f8ff;
+      --text-primary: #1a2442;
+      --text-secondary: #566180;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+      background: linear-gradient(180deg, #eef2ff 0%, #fafbff 100%);
+      color: var(--text-primary);
+    }
+    header {
+      background: #15224f;
+      color: #fff;
+      padding: 32px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+    header h1 { margin: 0; font-size: 32px; }
+    header p { margin: 4px 0 0; color: rgba(255,255,255,0.75); max-width: 560px; }
+    header a.back-link {
+      color: #fff;
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.4);
+      border-radius: 999px;
+      padding: 8px 16px;
+      font-size: 14px;
+      transition: background 0.2s ease;
+    }
+    header a.back-link:hover { background: rgba(255,255,255,0.12); }
+    main {
+      max-width: 1100px;
+      margin: 32px auto;
+      padding: 0 32px 48px;
+      display: grid;
+      gap: 28px;
+    }
+    section {
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 16px 40px rgba(30, 52, 120, 0.12);
+      padding: 26px 30px 32px;
+    }
+    section h2 {
+      margin: 0 0 18px;
+      font-size: 24px;
+      color: #14235b;
+    }
+    ul.resource-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 14px;
+    }
+    ul.resource-list li {
+      background: linear-gradient(135deg, rgba(92,110,252,0.12), rgba(92,110,252,0));
+      border-radius: 12px;
+      padding: 14px 18px;
+    }
+    ul.resource-list a {
+      color: var(--text-primary);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    ul.resource-list p {
+      margin: 6px 0 0;
+      color: var(--text-secondary);
+      font-size: 14px;
+      line-height: 1.45;
+    }
+    form {
+      display: grid;
+      gap: 16px;
+    }
+    form .field {
+      display: grid;
+      gap: 6px;
+    }
+    label { font-weight: 600; font-size: 14px; }
+    input, textarea {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid #cbd2f4;
+      border-radius: 8px;
+      font-size: 14px;
+      font-family: inherit;
+    }
+    textarea { resize: vertical; min-height: 70px; }
+    .form-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    button {
+      padding: 10px 18px;
+      border-radius: 999px;
+      border: none;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    button[type="submit"] {
+      background: var(--brand-primary);
+      color: #fff;
+    }
+    button[type="reset"] {
+      background: #e6ebff;
+      color: var(--text-primary);
+    }
+    footer {
+      text-align: center;
+      color: #6b7895;
+      font-size: 13px;
+      padding: 0 0 36px 0;
+    }
+    @media (max-width: 768px) {
+      main { padding: 0 18px 48px; }
+      section { padding: 22px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <h1>New Hire Center</h1>
+      <p>Welcome aboard! Complete the steps below to get travel-ready, access your welcome kit, and submit the required onboarding questionnaire.</p>
+    </div>
+    <a class="back-link" href="index.html">← Back to Document Hub</a>
+  </header>
+  <main>
+    <section>
+      <h2>Step 1 · Welcome Documents</h2>
+      <ul class="resource-list">
+        <li>
+          <a href="SAS/Welcome To the Team /Emails/Welcome Email example.pdf">Welcome Email Template</a>
+          <p>Overview of onboarding tasks, training links, and contact questionnaire.</p>
+        </li>
+        <li>
+          <a href="SAS/Welcome To the Team /Docs /Ready to work email example.pdf">Ready to Work Checklist</a>
+          <p>Understand scheduling cadence, leadership contacts, and first-week expectations.</p>
+        </li>
+        <li>
+          <a href="SAS/Welcome To the Team /Docs /Team Structure.pptx">Team Structure Overview</a>
+          <p>Meet the Special Projects leadership team and escalation ladder.</p>
+        </li>
+        <li>
+          <a href="SAS/Welcome To the Team /Docs /074606-240x514.mp4">Welcome Video</a>
+          <p>Watch the intro walkthrough for new SAS Retail travel team members.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Step 2 · Travel &amp; Policy Essentials</h2>
+      <ul class="resource-list">
+        <li>
+          <a href="SAS/Project Details/Docs  copy/2025 SAS WFM Remodel Travel Team.pdf">Travel Team Handbook</a>
+          <p>Everything you need to know about scheduling, attendance, and on-site expectations.</p>
+        </li>
+        <li>
+          <a href="SAS/Project Details/Docs  copy/Preparing for Flight Travel.pdf">Preparing for Flight Travel Guide</a>
+          <p>Step-by-step instructions for first-time flyers, from check-in to gate arrival.</p>
+        </li>
+        <li>
+          <a href="SAS/We provide GROUP rental cars for work related purposes to ensure you have transportation when out on a project.pdf">Rental Car Guidelines</a>
+          <p>Understand designated driver responsibilities and essential trip rules.</p>
+        </li>
+        <li>
+          <a href="SAS/Welcome To the Team /Docs /TRAVEL POLICY CALL OUTS.pdf">Travel Policy Call-Outs</a>
+          <p>Quick reference for what is and isn’t allowed during travel assignments.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Step 3 · Required Questionnaire</h2>
+      <p>Complete the form below and click <strong>Submit Questionnaire</strong>. Your default mail client opens an email to <code>admin@sasretail.com</code> with your responses—review and send to finish.</p>
+      <form action="mailto:admin@sasretail.com" method="post" enctype="text/plain">
+        <div class="field">
+          <label for="name">First &amp; Last Name (as on ID)</label>
+          <input type="text" id="name" name="FirstLastName" required>
+        </div>
+        <div class="field">
+          <label for="sex">Sex on Real ID</label>
+          <input type="text" id="sex" name="SexOnID" required>
+        </div>
+        <div class="field">
+          <label for="idvalid">Valid photo ID / passport?</label>
+          <input type="text" id="idvalid" name="ValidIDorPassport" required>
+        </div>
+        <div class="field">
+          <label for="dob">Date of Birth</label>
+          <input type="date" id="dob" name="DOB" required>
+        </div>
+        <div class="field">
+          <label for="address">Full Address</label>
+          <textarea id="address" name="FullAddress" required></textarea>
+        </div>
+        <div class="field">
+          <label for="email">Preferred Email (must match Oracle)</label>
+          <input type="email" id="email" name="PreferredEmail" required>
+        </div>
+        <div class="field">
+          <label for="phone">Preferred Phone (must match Oracle)</label>
+          <input type="tel" id="phone" name="PreferredPhone" required>
+        </div>
+        <div class="field">
+          <label for="airport">Closest Major Airport</label>
+          <input type="text" id="airport" name="ClosestAirport" required>
+        </div>
+        <div class="field">
+          <label for="emergency">Emergency Contact (name, relationship, phone)</label>
+          <textarea id="emergency" name="EmergencyContact" required></textarea>
+        </div>
+        <div class="field">
+          <label for="languages">Other languages spoken</label>
+          <input type="text" id="languages" name="OtherLanguages">
+        </div>
+        <div class="field">
+          <label for="shirt">Polo Shirt Size</label>
+          <input type="text" id="shirt" name="PoloSize" required>
+        </div>
+        <div class="field">
+          <label for="transport">Do you have reliable transportation?</label>
+          <input type="text" id="transport" name="ReliableTransportation" required>
+        </div>
+        <div class="field">
+          <label for="localwork">Willing to work local (≤ 6 hr drive)?</label>
+          <input type="text" id="localwork" name="LocalWork" required>
+        </div>
+        <div class="field">
+          <label for="license">Valid driver’s license?</label>
+          <input type="text" id="license" name="ValidLicense" required>
+        </div>
+        <div class="field">
+          <label for="driver">Able to be rental car driver?</label>
+          <input type="text" id="driver" name="ResponsibleDriver" required>
+        </div>
+        <div class="field">
+          <label for="rentalstatus">Owe fees / on do-not-rent list?</label>
+          <input type="text" id="rentalstatus" name="RentalStatus" required>
+        </div>
+        <div class="field">
+          <label for="timeoff">Upcoming dates needing off (through Dec 31)</label>
+          <textarea id="timeoff" name="UpcomingTimeOff"></textarea>
+        </div>
+        <div class="field">
+          <label for="notes">Additional notes / questions</label>
+          <textarea id="notes" name="AdditionalNotes"></textarea>
+        </div>
+        <div class="form-actions">
+          <button type="submit">Submit Questionnaire</button>
+          <button type="reset">Reset</button>
+        </div>
+      </form>
+    </section>
+  </main>
+  <footer>&copy; SAS Retail Special Projects</footer>
+</body>
+</html>

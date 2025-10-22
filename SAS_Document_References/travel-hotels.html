@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hotel Confirmation Packet · SAS Retail</title>
+  <style>
+    :root {
+      --brand-primary: #1f3faa;
+      --brand-accent: #5c6efc;
+      --text-primary: #132050;
+      --text-secondary: #54607a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+      background: linear-gradient(180deg, #eef2ff 0%, #fafbff 100%);
+      color: var(--text-primary);
+    }
+    header {
+      background: #15224f;
+      color: #fff;
+      padding: 32px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+    header h1 { margin: 0; font-size: 30px; }
+    header p { margin: 6px 0 0; color: rgba(255,255,255,0.75); max-width: 640px; }
+    header a.back-link {
+      color: #fff;
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.4);
+      border-radius: 999px;
+      padding: 8px 16px;
+      font-size: 14px;
+      transition: background 0.2s ease;
+    }
+    header a.back-link:hover { background: rgba(255,255,255,0.12); }
+    main {
+      max-width: 1000px;
+      margin: 32px auto;
+      padding: 0 32px 48px;
+      display: grid;
+      gap: 28px;
+    }
+    section {
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 16px 44px rgba(26, 46, 110, 0.12);
+      padding: 28px 32px;
+    }
+    section h2 {
+      margin: 0 0 14px;
+      font-size: 24px;
+      color: #14235b;
+    }
+    section p {
+      margin: 0 0 14px;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+    ul.checklist {
+      margin: 0;
+      padding-left: 20px;
+      color: var(--text-secondary);
+      line-height: 1.55;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+      font-size: 14px;
+    }
+    th, td {
+      border: 1px solid rgba(92,110,252,0.25);
+      padding: 10px 12px;
+      text-align: left;
+    }
+    th { background: rgba(92,110,252,0.12); color: #14235b; }
+    .callout {
+      border-left: 4px solid var(--brand-primary);
+      background: rgba(92,110,252,0.1);
+      padding: 12px 16px;
+      border-radius: 10px;
+      margin-top: 14px;
+    }
+    footer {
+      text-align: center;
+      color: #6b7896;
+      font-size: 13px;
+      padding-bottom: 36px;
+    }
+    @media (max-width: 768px) {
+      main { padding: 0 18px 48px; }
+      section { padding: 24px; }
+      table { display: block; overflow-x: auto; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <h1>Hotel Confirmation Packet</h1>
+      <p>Standardized check-in guidance for associates plus a leadership template for communicating room assignments and billing details.</p>
+    </div>
+    <a class="back-link" href="travel.html">← Back to Travel Hub</a>
+  </header>
+  <main>
+    <section>
+      <h2>For Team Members</h2>
+      <p>Keep this information handy when you arrive at the hotel.</p>
+      <ul class="checklist">
+        <li>Present a valid photo ID at check-in. Rooms are direct-billed through CLC; personal credit cards should only be used for incidentals.</li>
+        <li>Do not charge meals, room service, or upgrades to the room without prior approval.</li>
+        <li>No guests are allowed in company-paid rooms. Smoking or vaping is prohibited.</li>
+        <li>Confirm checkout times with the front desk and coordinate with your carpool for departure.</li>
+        <li>Report any issues (lack of reservation, incorrect room type) to the Project Supervisor and Patricia Booker immediately.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Leadership Template</h2>
+      <p>Use this format when sharing hotel confirmations. Replace placeholders with the correct reservation information.</p>
+      <table>
+        <tr>
+          <th colspan="2">Hotel Overview</th>
+        </tr>
+        <tr>
+          <td>Hotel Name</td>
+          <td>[Example: Best Western Plus, Thousand Oaks, CA]</td>
+        </tr>
+        <tr>
+          <td>Address &amp; Phone</td>
+          <td>[75 W Thousand Oaks Blvd, Thousand Oaks, CA · 805-497-3701]</td>
+        </tr>
+        <tr>
+          <td>Check-In / Check-Out</td>
+          <td>[Mon 06/02 after 3 PM · Fri 06/06 before 11 AM]</td>
+        </tr>
+        <tr>
+          <td>Billing</td>
+          <td>Direct bill through CLC · No personal credit card required for room + tax</td>
+        </tr>
+      </table>
+      <table>
+        <tr>
+          <th>Associate</th>
+          <th>Confirmation #</th>
+          <th>Room Type</th>
+          <th>Notes</th>
+        </tr>
+        <tr>
+          <td>[Full Name]</td>
+          <td>[e.g., 970466930]</td>
+          <td>Single / Double</td>
+          <td>[Add roommate, floor requests, ADA needs]</td>
+        </tr>
+        <tr>
+          <td>[Additional Associates]</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <div class="callout">
+        <strong>Leadership reminder:</strong> Include the CLC reference number and specify if any team members are sharing rooms. Confirm the front desk has each associate listed as an authorized guest.
+      </div>
+    </section>
+
+    <section>
+      <h2>Example Summary</h2>
+      <table>
+        <tr>
+          <th colspan="4">Best Western Plus · Thousand Oaks · 06/02 – 06/06</th>
+        </tr>
+        <tr>
+          <th>Associate</th>
+          <th>Confirmation #</th>
+          <th>Room Type</th>
+          <th>Notes</th>
+        </tr>
+        <tr>
+          <td>Dillon Dority</td>
+          <td>970466930</td>
+          <td>Single</td>
+          <td>Arrives with Flight Confirmation 2MQM3C</td>
+        </tr>
+        <tr>
+          <td>Calandria Coleman</td>
+          <td>970466030</td>
+          <td>Single</td>
+          <td>Late arrival – ETA 10 PM</td>
+        </tr>
+        <tr>
+          <td>Victor McMillian</td>
+          <td>610466330</td>
+          <td>Single</td>
+          <td>Shares rental car with Group B</td>
+        </tr>
+      </table>
+    </section>
+  </main>
+  <footer>&copy; SAS Retail Special Projects</footer>
+</body>
+</html>

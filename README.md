@@ -9,7 +9,7 @@ Modern, SharePoint-inspired employee portal prototype for SAS Retail. The single
 - Pure HTML, CSS, and vanilla JavaScript for easy deployment to GitHub Pages or static hosts.
 
 ## Getting Started
-1. Clone the repo: `git clone git@github.com:puploki93/SAS_Retail-Info.git`
+1. Clone the repo (run manually: git clone git@github.com:puploki93/SAS_Retail-Info.git)
 2. Open `public/index.html` in any modern browser to explore the prototype locally.
 3. Update the static copy or sample data files to point at new assets as they become available.
 
@@ -60,7 +60,7 @@ The repository is ready for GitHub Pages or any static hosting platform. Publish
 To update the live site:
 1. Make your changes locally.
 2. Commit with a descriptive message.
-3. Push to `main`: `git push origin main`
+3. Push to `main` (run manually: git push origin main)
 
 ## Roadmap Ideas
 - Upload workflow for documents and travel receipts.

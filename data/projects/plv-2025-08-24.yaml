@@ -1,0 +1,83 @@
+id: "PLV-2025-08-24"
+title: "Plv 2025 08 24"
+store:
+  number: "00000"
+  name: "TBD Store Name"
+  address: "Provide the full street address"
+  report_time: "YYYY-MM-DDTHH:MM:SS-07:00"
+contacts:
+  supervisor:
+    name: "Supervisor Name"
+    phone: "+1-000-000-0000"
+    email: "supervisor@example.com"
+  lead:
+    name: "Lead Name"
+    phone: "+1-000-000-0000"
+    email: "lead@example.com"
+travel:
+  flights:
+  hotel:
+    name: "Hotel TBD"
+    address: "Provide hotel address"
+    check_in: "YYYY-MM-DD"
+    check_out: "YYYY-MM-DD"
+    reservations:
+  carpool:
+policies:
+  references:
+    - "dress-code"
+    - "travel-policy"
+    - "time-reporting"
+required_actions:
+  - "Review travel policy and confirm itineraries."
+  - "Contact assigned driver 24h prior to departure."
+  - "Submit PROD time immediately after each shift."
+attachments:
+  -
+    title: "Advantage Travel Policy"
+    path: "content/assets/docs/advantage-travel-policy-2025-04-14.pdf"
+    type: "pdf"
+    mandatory: True
+  -
+    title: "Merchandiser Timekeeping Guide"
+    path: "content/assets/docs/timekeeping-change-merchandiser-guide.pdf"
+    type: "pdf"
+    mandatory: True
+  -
+    title: "Travel Policy Call Outs"
+    path: "content/assets/docs/travel-policy-call-outs.pdf"
+    type: "pdf"
+    mandatory: True
+  -
+    title: "Time Reporting Responsibilities"
+    path: "content/assets/docs/leads-or-elites-cannot-report-your-time.pdf"
+    type: "pdf"
+    mandatory: True
+  -
+    title: "Communication Guide"
+    path: "content/assets/docs/to-call-or-email.pdf"
+    type: "pdf"
+    mandatory: False
+source_emails:
+  -
+    type: "carpool"
+    path: "content/assets/projects/plv-2025-08-24/emails/carpool-email-plv-2025.pdf"
+  -
+    type: "flights"
+    path: "content/assets/projects/plv-2025-08-24/emails/flights-email-plv-2025.pdf"
+  -
+    type: "hotel"
+    path: "content/assets/projects/plv-2025-08-24/emails/hotel-email-plv-2025.pdf"
+  -
+    type: "orientation"
+    path: "content/assets/projects/plv-2025-08-24/emails/ready-to-work-email-plv-2025.pdf"
+  -
+    type: "schedule"
+    path: "content/assets/projects/plv-2025-08-24/emails/schedule-info-plv-2025-08-24.pdf"
+  -
+    type: "welcome"
+    path: "content/assets/projects/plv-2025-08-24/emails/welcome-email-plv-2025.pdf"
+last_updated: "2025-10-25T04:41:06Z"
+notes:
+  - "Generated via scripts/ingest_emails.py; review before publishing."
+  - "Populate travel.flights, travel.hotel.reservations, and travel.carpool with confirmed details."

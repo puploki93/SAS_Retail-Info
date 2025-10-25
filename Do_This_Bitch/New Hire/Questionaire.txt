@@ -1,0 +1,82 @@
+<!-- /newhire-pages/welcome-guide.html -->
+<html>
+<head>
+  <title>Welcome Guide</title>
+</head>
+<body>
+  <h1>Welcome Guide</h1>
+  <p><em>Last updated: May 6, 2025</em></p>
+  <hr/>
+  <div>
+    <!-- Insert full content of that New Hire file -->
+  </div>
+
+  <h2>New Hire Submission Form</h2>
+  <form action="https://formspree.io/f/{your-form-id}" method="POST">
+    <label>Sex as listed on Real ID:</label><br>
+    <input type="text" name="sex" required><br><br>
+
+    <label>Do you have a Valid photo ID or passport?</label><br>
+    <input type="text" name="photo_id" required><br><br>
+
+    <label>Full name as shown on ID:</label><br>
+    <input type="text" name="full_name" required><br><br>
+
+    <label>Date of Birth:</label><br>
+    <input type="date" name="dob" required><br><br>
+
+    <label>Address (City, State, Zip):</label><br>
+    <textarea name="address" required></textarea><br><br>
+
+    <label>Email (must match Oracle):</label><br>
+    <input type="email" name="oracle_email" required><br><br>
+
+    <label>Phone Number (must match Oracle):</label><br>
+    <input type="tel" name="oracle_phone" required><br><br>
+
+    <label>Closest Major Airport:</label><br>
+    <input type="text" name="airport"><br><br>
+
+    <label>Emergency Contact (Name, Relation, Phone):</label><br>
+    <textarea name="emergency_contact"></textarea><br><br>
+
+    <label>Languages (besides English):</label><br>
+    <input type="text" name="languages"><br><br>
+
+    <label>Polo Shirt Size:</label><br>
+    <input type="text" name="shirt_size"><br><br>
+
+    <label>Reliable Transportation?</label><br>
+    <input type="text" name="transportation"><br><br>
+
+    <label>Willing to Work Locally (up to 6 hrs drive)?</label><br>
+    <input type="text" name="local_work"><br><br>
+
+    <label>Valid Driver’s License?</label><br>
+    <input type="text" name="license"><br><br>
+
+    <label>Can You Drive for Us?</label><br>
+    <input type="text" name="can_drive"><br><br>
+
+    <label>Owe Fees to Rental Companies?</label><br>
+    <input type="text" name="rental_fees"><br><br>
+
+    <label>Upcoming Time-Off Requests:</label><br>
+    <textarea name="time_off"></textarea><br><br>
+
+    <label>Travel Restrictions?</label><br>
+    <input type="text" name="restrictions"><br><br>
+
+    <label>Earliest Start Date:</label><br>
+    <input type="date" name="start_date"><br><br>
+
+    <label>Referral Name (if any):</label><br>
+    <input type="text" name="referral"><br><br>
+
+    <label>Preferred Travel/Roommate?</label><br>
+    <input type="text" name="roommate"><br><br>
+
+    <input type="submit" value="Submit Form">
+  </form>
+</body>
+</html>

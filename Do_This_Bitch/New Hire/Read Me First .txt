@@ -1,0 +1,17 @@
+## New Hire Resources
+
+<!-- Codex: Scan /NewHire folder -->
+<!-- For each file, create a button linking to a document details page -->
+
+<div class="newhire-buttons">
+  <!-- START LOOP -->
+  <a href="/newhire-pages/{filename-without-ext}.html">
+    <button class="doc-btn">{Document Title}</button>
+  </a>
+  <!-- END LOOP -->
+</div>
+
+<!-- Codex: Also embed onboarding form -->
+<div id="onboarding-form">
+  <!-- Insert generated HTML form here -->
+</div>

@@ -1,0 +1,35 @@
+<!-- This markdown is used to trigger Codex behavior for automation -->
+
+## Travel Documents Portal
+
+<!-- Codex: Scan the /Travel folder, extract file names + metadata -->
+
+<!-- For each file in /Travel -->
+<!-- Generate a button for that file that links to a detailed page -->
+
+<!-- Example layout -->
+<div class="travel-buttons">
+  <!-- Codex: Loop through files -->
+  <!-- START LOOP -->
+  <a href="/travel-pages/{filename-without-ext}.html">
+    <button class="doc-btn">{Document Title}</button>
+  </a>
+  <!-- END LOOP -->
+</div><!-- This markdown is used to trigger Codex behavior for automation -->
+
+## Travel Documents Portal
+
+<!-- Codex: Scan the /Travel folder, extract file names + metadata -->
+
+<!-- For each file in /Travel -->
+<!-- Generate a button for that file that links to a detailed page -->
+
+<!-- Example layout -->
+<div class="travel-buttons">
+  <!-- Codex: Loop through files -->
+  <!-- START LOOP -->
+  <a href="/travel-pages/{filename-without-ext}.html">
+    <button class="doc-btn">{Document Title}</button>
+  </a>
+  <!-- END LOOP -->
+</div> 

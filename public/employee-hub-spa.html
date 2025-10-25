@@ -6,23 +6,27 @@
     <title>SAS Retail Services — Employee Hub</title>
     <style>
       :root {
-        --blue-deep: #0f2a56;
-        --blue-primary: #2760c4;
-        --blue-light: #e6f1ff;
-        --teal-primary: #2ea69b;
-        --teal-light: #e4f7f4;
-        --navy-card: #122c4f;
-        --navy-card-accent: #1c3e73;
-        --text-main: #1f2430;
-        --text-muted: #5a6170;
-        --surface: #f4f6fb;
-        --white: #ffffff;
-        --radius-large: 28px;
-        --radius-medium: 20px;
-        --radius-small: 12px;
+        --color-bg-deep: #0f1e2d;
+        --color-bg-mid: #172f45;
+        --color-bg-light: #21506f;
+        --color-surface: rgba(18, 40, 63, 0.82);
+        --color-panel: rgba(18, 44, 70, 0.92);
+        --color-text: #edf5ff;
+        --color-muted: rgba(224, 236, 255, 0.74);
+        --color-accent: #32b7a1;
+        --color-accent-strong: #1d8c79;
+        --color-accent-soft: rgba(50, 183, 161, 0.12);
+        --color-blue: #2979ff;
+        --color-blue-dark: #1a5dff;
+        --color-error: #ff8f8f;
+        --radius-lg: 28px;
+        --radius-md: 18px;
+        --radius-sm: 10px;
+        --shadow-hard: 0 20px 42px rgba(5, 18, 34, 0.45);
+        --shadow-soft: 0 14px 32px rgba(6, 22, 42, 0.32);
         font-family: "Inter", "Segoe UI", sans-serif;
-        color: var(--text-main);
-        background-color: var(--surface);
+        color: var(--color-text);
+        background-color: var(--color-bg-deep);
       }
 
       * {
@@ -34,355 +38,377 @@
         min-height: 100vh;
         display: flex;
         flex-direction: column;
-        background: linear-gradient(160deg, #0c1e3f 0%, #173564 45%, #061224 100%);
-        color: var(--text-main);
+        background: linear-gradient(140deg, var(--color-bg-deep), var(--color-bg-mid) 45%, var(--color-bg-light));
       }
 
       header.site-header {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 1.5rem clamp(1.5rem, 6vw, 4rem);
-        background: linear-gradient(120deg, rgba(18, 44, 79, 0.92), rgba(28, 72, 142, 0.92));
-        backdrop-filter: blur(14px);
-        box-shadow: 0 10px 30px rgba(2, 12, 29, 0.4);
+        padding: 1.5rem clamp(1.5rem, 6vw, 3.5rem);
+        background: rgba(8, 22, 36, 0.85);
+        backdrop-filter: blur(16px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
         position: sticky;
-        top: 0;
-        z-index: 10;
+        inset: 0 0 auto;
+        z-index: 20;
       }
 
       .brand {
         display: flex;
         align-items: center;
         gap: 1rem;
-        color: var(--white);
       }
 
       .brand-logo {
-        display: grid;
-        place-items: center;
-        font-weight: 700;
-        font-size: 1.15rem;
         width: 54px;
         height: 50px;
-        border-radius: var(--radius-small);
-        background: linear-gradient(135deg, #4887ff, #1f57b5);
+        border-radius: var(--radius-sm);
+        display: grid;
+        place-items: center;
+        background: linear-gradient(135deg, #4f8dff, #123b7a);
+        font-weight: 700;
         letter-spacing: 0.08em;
-        text-transform: uppercase;
-        box-shadow: 0 14px 25px rgba(10, 28, 61, 0.45);
+        box-shadow: var(--shadow-hard);
       }
 
       .brand-text {
+        display: grid;
+        gap: 0.2rem;
+      }
+
+      .brand-text span:first-child {
+        font-size: 0.75rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: rgba(228, 240, 255, 0.7);
+      }
+
+      .brand-text span:last-child {
         font-weight: 600;
-        font-size: 1.05rem;
-        letter-spacing: 0.04em;
+        letter-spacing: 0.06em;
         text-transform: uppercase;
       }
 
       .login-button {
-        padding: 0.65rem 1.5rem;
+        padding: 0.6rem 1.4rem;
         border-radius: 999px;
-        background: var(--white);
-        color: var(--blue-primary);
-        font-weight: 600;
+        background: var(--color-text);
+        color: #0f2a46;
         text-decoration: none;
-        box-shadow: 0 10px 20px rgba(0, 10, 40, 0.25);
+        font-weight: 600;
+        box-shadow: 0 14px 30px rgba(12, 42, 72, 0.38);
         transition: transform 0.2s ease, box-shadow 0.2s ease;
       }
 
       .login-button:hover,
       .login-button:focus-visible {
         transform: translateY(-2px);
-        box-shadow: 0 14px 28px rgba(0, 16, 60, 0.35);
+        box-shadow: 0 18px 36px rgba(15, 52, 88, 0.45);
       }
 
       main {
         flex: 1;
-        padding: clamp(2rem, 6vw, 4rem) clamp(1.5rem, 6vw, 4rem) 4rem;
+        padding: clamp(2rem, 6vw, 4rem);
         display: grid;
-        gap: clamp(2rem, 5vw, 3.5rem);
+        gap: clamp(2rem, 5vw, 3rem);
       }
 
-      .hero-section {
+      .hero {
         text-align: center;
-        color: var(--white);
         display: grid;
-        gap: 0.75rem;
+        gap: 0.6rem;
       }
 
-      .hero-section h1 {
-        font-size: clamp(2.6rem, 6vw, 3.6rem);
+      .hero h1 {
         margin: 0;
+        font-size: clamp(2.6rem, 6vw, 3.8rem);
         letter-spacing: -0.01em;
       }
 
-      .hero-section p {
+      .hero p {
         margin: 0 auto;
-        max-width: 640px;
-        font-size: clamp(1.05rem, 3vw, 1.2rem);
-        color: rgba(235, 241, 255, 0.82);
+        color: var(--color-muted);
+        max-width: 720px;
+        font-size: clamp(1.05rem, 3vw, 1.25rem);
       }
 
-      .tab-list {
+      nav.tab-nav {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: clamp(1rem, 4vw, 1.5rem);
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: clamp(0.75rem, 2vw, 1.2rem);
       }
 
-      .tab-button {
-        border: none;
-        border-radius: var(--radius-large);
-        padding: clamp(1.4rem, 3.5vw, 1.8rem);
-        text-align: left;
-        display: grid;
-        gap: 0.75rem;
-        background: rgba(255, 255, 255, 0.14);
-        color: var(--white);
-        cursor: pointer;
-        transition: transform 0.25s ease, box-shadow 0.25s ease;
+      nav.tab-nav a {
         position: relative;
-        overflow: hidden;
-      }
-
-      .tab-button::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(160deg, rgba(255, 255, 255, 0.16), transparent 60%);
-        pointer-events: none;
-      }
-
-      .tab-button:hover,
-      .tab-button:focus-visible {
-        transform: translateY(-6px);
-        box-shadow: 0 18px 45px rgba(6, 18, 42, 0.32);
-      }
-
-      .tab-button.travel {
-        background: linear-gradient(150deg, var(--blue-light), rgba(76, 140, 255, 0.85));
-        color: #0f2a56;
-      }
-
-      .tab-button.new-hire {
-        background: linear-gradient(150deg, var(--teal-light), rgba(46, 166, 155, 0.88));
-        color: #0c3f36;
-      }
-
-      .tab-button.policies {
-        background: linear-gradient(150deg, var(--navy-card), var(--navy-card-accent));
-        color: var(--white);
-      }
-
-      .tab-button strong {
-        font-size: 1.25rem;
-      }
-
-      .tab-button span {
-        font-size: 0.95rem;
+        display: grid;
+        gap: 0.35rem;
+        padding: 1rem 1.2rem;
+        text-decoration: none;
         color: inherit;
-        opacity: 0.8;
+        border-radius: var(--radius-md);
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid transparent;
+        box-shadow: var(--shadow-soft);
+        transition: transform 0.25s ease, border 0.2s ease;
       }
 
-      .tab-button.active {
-        outline: 3px solid rgba(255, 255, 255, 0.8);
-        outline-offset: 4px;
+      nav.tab-nav a span.label {
+        font-weight: 600;
+        letter-spacing: 0.02em;
+      }
+
+      nav.tab-nav a span.sub-label {
+        font-size: 0.85rem;
+        color: rgba(235, 242, 255, 0.65);
+      }
+
+      nav.tab-nav a:hover,
+      nav.tab-nav a:focus-visible {
+        transform: translateY(-6px);
+        border-color: rgba(255, 255, 255, 0.35);
+      }
+
+      nav.tab-nav a.active {
+        border-color: rgba(50, 183, 161, 0.65);
+        background: var(--color-accent-soft);
+        box-shadow: 0 16px 36px rgba(17, 56, 76, 0.35);
       }
 
       .tab-panels {
-        background: rgba(240, 244, 255, 0.08);
-        border-radius: var(--radius-large);
-        padding: clamp(2.2rem, 5vw, 3rem);
-        box-shadow: inset 0 0 0 1px rgba(116, 160, 255, 0.18);
-        backdrop-filter: blur(6px);
-        color: rgba(235, 241, 255, 0.95);
+        background: var(--color-panel);
+        border-radius: var(--radius-lg);
+        padding: clamp(2rem, 5vw, 3rem);
+        box-shadow: inset 0 0 0 1px rgba(182, 220, 255, 0.18);
+        backdrop-filter: blur(14px);
       }
 
       .tab-panel {
         display: none;
+        gap: clamp(1.8rem, 4vw, 2.6rem);
       }
 
       .tab-panel.active {
         display: grid;
-        gap: clamp(1.5rem, 4vw, 2.4rem);
       }
 
-      .panel-heading h2 {
-        margin: 0;
-        font-size: clamp(1.8rem, 4vw, 2.2rem);
-        color: var(--white);
-      }
-
-      .panel-heading p {
-        margin: 0;
-        color: rgba(220, 232, 255, 0.78);
-        font-size: 1.05rem;
-      }
-
-      .document-grid {
+      .panel-header {
         display: grid;
-        gap: clamp(1.5rem, 3vw, 2rem);
+        gap: 0.45rem;
       }
 
-      .document-card {
-        display: grid;
-        gap: 0.9rem;
-        background: rgba(8, 20, 40, 0.55);
-        border-radius: var(--radius-medium);
-        padding: clamp(1.4rem, 3vw, 1.8rem);
-        box-shadow: 0 12px 32px rgba(5, 14, 28, 0.35);
-      }
-
-      .document-card h3 {
+      .panel-header h2 {
         margin: 0;
-        font-size: 1.2rem;
-        color: #f1f6ff;
+        font-size: clamp(1.9rem, 4vw, 2.4rem);
       }
 
-      .document-card .meta {
-        font-size: 0.95rem;
-        color: rgba(200, 215, 245, 0.75);
-      }
-
-      .document-card iframe,
-      .document-card embed {
-        width: 100%;
-        min-height: 380px;
-        border: none;
-        border-radius: var(--radius-small);
-        background: rgba(12, 28, 56, 0.4);
-      }
-
-      .document-card .download-link {
-        text-decoration: none;
-        color: #9dcbff;
-        font-weight: 600;
-        display: inline-flex;
-        align-items: center;
-        gap: 0.5rem;
-      }
-
-      .document-card .download-link::after {
-        content: "→";
-        font-size: 1rem;
-      }
-
-      .document-card .download-link:hover,
-      .document-card .download-link:focus-visible {
-        text-decoration: underline;
-      }
-
-      .placeholder-box {
-        min-height: 220px;
-        display: grid;
-        place-items: center;
-        background: rgba(255, 255, 255, 0.1);
-        border: 2px dashed rgba(157, 203, 255, 0.35);
-        border-radius: var(--radius-small);
-        padding: 1.5rem;
-        text-align: center;
-        color: rgba(220, 232, 255, 0.85);
-      }
-
-      .questionnaire-section {
-        background: linear-gradient(160deg, rgba(46, 166, 155, 0.15), rgba(12, 63, 54, 0.35));
-        border-radius: var(--radius-large);
-        padding: clamp(2rem, 5vw, 2.8rem);
-        box-shadow: 0 18px 40px rgba(8, 22, 32, 0.4);
-        color: rgba(232, 248, 245, 0.95);
-      }
-
-      .questionnaire-section header {
-        display: grid;
-        gap: 0.4rem;
-        margin-bottom: 1.5rem;
-      }
-
-      .questionnaire-section h3 {
+      .panel-header p {
         margin: 0;
-        font-size: clamp(1.6rem, 3vw, 2rem);
-        color: #dcfff7;
+        color: rgba(220, 235, 255, 0.78);
+        max-width: 840px;
       }
 
-      .questionnaire-section p {
-        margin: 0;
-        color: rgba(202, 242, 234, 0.85);
-      }
-
-      form#new-hire-questionnaire {
+      .button-strip {
         display: grid;
         gap: 1.5rem;
       }
 
+      .button-strip h3 {
+        margin: 0;
+        font-size: 1.1rem;
+        letter-spacing: 0.02em;
+        color: rgba(230, 245, 255, 0.86);
+      }
+
+      .newhire-buttons,
+      .travel-buttons,
+      .policy-buttons,
+      .payroll-buttons,
+      .remodel-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-top: 1rem;
+        justify-content: center;
+      }
+
+      .doc-btn {
+        background-color: var(--color-blue);
+        color: #ffffff;
+        padding: 0.85rem 1.8rem;
+        border: none;
+        border-radius: 12px;
+        font-size: 0.98rem;
+        cursor: pointer;
+        font-weight: 600;
+        box-shadow: 0 12px 28px rgba(8, 26, 66, 0.35);
+        transition: transform 0.18s ease, background-color 0.18s ease;
+      }
+
+      .doc-btn:hover,
+      .doc-btn:focus-visible {
+        background-color: var(--color-blue-dark);
+        transform: translateY(-2px);
+      }
+
+      .doc-btn.active {
+        background: linear-gradient(135deg, var(--color-accent), var(--color-accent-strong));
+        color: #0c2a29;
+      }
+
+      .document-viewer {
+        background: rgba(6, 18, 32, 0.65);
+        border-radius: var(--radius-md);
+        border: 1px solid rgba(190, 226, 255, 0.16);
+        padding: clamp(1.5rem, 4vw, 2rem);
+        box-shadow: inset 0 0 0 1px rgba(120, 180, 210, 0.08);
+        min-height: 320px;
+        max-height: 70vh;
+        overflow: auto;
+      }
+
+      .document-viewer h1,
+      .document-viewer h2,
+      .document-viewer h3,
+      .document-viewer h4,
+      .document-viewer h5,
+      .document-viewer h6 {
+        color: #e9f8ff;
+      }
+
+      .document-viewer table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      .document-viewer table,
+      .document-viewer th,
+      .document-viewer td {
+        border: 1px solid rgba(200, 220, 240, 0.3);
+        padding: 0.5rem;
+      }
+
+      .document-viewer figure {
+        margin: 0;
+      }
+
+      .viewer-placeholder {
+        color: rgba(215, 230, 245, 0.7);
+        font-style: italic;
+      }
+
+      .download-callout {
+        display: grid;
+        gap: 0.75rem;
+        background: rgba(20, 78, 70, 0.4);
+        border-radius: 14px;
+        padding: 1.4rem;
+        border: 1px solid rgba(80, 200, 185, 0.3);
+      }
+
+      .download-callout p {
+        margin: 0;
+      }
+
+      .download-link {
+        justify-self: start;
+        background: linear-gradient(135deg, var(--color-accent), var(--color-accent-strong));
+        color: #051e1b;
+        padding: 0.75rem 1.6rem;
+        border-radius: 999px;
+        text-decoration: none;
+        font-weight: 600;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+        box-shadow: 0 12px 30px rgba(12, 52, 48, 0.35);
+      }
+
+      .download-link::after {
+        content: '\2193';
+      }
+
+      .image-wrapper {
+        display: grid;
+        gap: 0.75rem;
+        justify-items: center;
+      }
+
+      .image-wrapper img {
+        max-width: min(600px, 100%);
+        border-radius: 14px;
+        border: 1px solid rgba(210, 226, 240, 0.2);
+        box-shadow: 0 20px 36px rgba(5, 16, 32, 0.4);
+      }
+
+      .image-wrapper figcaption {
+        font-size: 0.92rem;
+        color: rgba(220, 235, 248, 0.72);
+        text-align: center;
+      }
+
+      .questionnaire {
+        background: linear-gradient(160deg, rgba(50, 183, 161, 0.22), rgba(18, 88, 76, 0.7));
+        border-radius: var(--radius-lg);
+        padding: clamp(2rem, 4vw, 2.6rem);
+        border: 1px solid rgba(90, 210, 195, 0.22);
+        box-shadow: var(--shadow-hard);
+      }
+
+      .questionnaire header {
+        margin-bottom: 1.2rem;
+      }
+
+      .questionnaire h3 {
+        margin: 0;
+        font-size: clamp(1.6rem, 3vw, 2rem);
+      }
+
+      .questionnaire p {
+        margin: 0.3rem 0 0;
+        color: rgba(225, 245, 240, 0.8);
+      }
+
+      form#new-hire-form {
+        display: grid;
+        gap: 1.4rem;
+      }
+
       .form-grid {
         display: grid;
-        gap: 1.2rem;
+        gap: 1.1rem;
         grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       }
 
-      .form-field,
-      .form-field-wide {
+      .form-field {
         display: grid;
         gap: 0.4rem;
       }
 
-      .form-field label,
-      .form-field-wide label,
-      .form-fieldset legend {
+      .form-field label {
         font-weight: 600;
-        color: rgba(232, 248, 245, 0.95);
+        color: rgba(225, 250, 244, 0.92);
       }
 
       .form-field input,
-      .form-field select,
-      .form-field textarea,
-      .form-field-wide input,
-      .form-field-wide select,
-      .form-field-wide textarea {
+      .form-field textarea {
         padding: 0.75rem 0.9rem;
-        border-radius: var(--radius-small);
-        border: 1px solid rgba(46, 166, 155, 0.35);
-        background: rgba(2, 20, 20, 0.4);
-        color: #dcfff7;
+        border-radius: var(--radius-sm);
+        border: 1px solid rgba(120, 220, 208, 0.32);
+        background: rgba(6, 38, 36, 0.55);
+        color: #ecfff9;
         font-size: 1rem;
-        min-height: 48px;
       }
 
-      .form-field textarea,
-      .form-field-wide textarea {
-        min-height: 110px;
+      .form-field textarea {
+        min-height: 120px;
         resize: vertical;
       }
 
       .form-field input:focus-visible,
-      .form-field select:focus-visible,
-      .form-field textarea:focus-visible,
-      .form-field-wide input:focus-visible,
-      .form-field-wide select:focus-visible,
-      .form-field-wide textarea:focus-visible {
-        outline: 2px solid rgba(220, 255, 247, 0.85);
+      .form-field textarea:focus-visible {
+        outline: 2px solid rgba(170, 235, 225, 0.85);
         outline-offset: 2px;
-      }
-
-      .form-fieldset {
-        border: 1px solid rgba(46, 166, 155, 0.35);
-        border-radius: var(--radius-small);
-        padding: 1rem 1.2rem 1.2rem;
-        display: grid;
-        gap: 0.6rem;
-        background: rgba(2, 20, 20, 0.35);
-      }
-
-      .radio-group {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1rem;
-      }
-
-      .radio-option {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.35rem;
-        color: rgba(214, 242, 237, 0.9);
       }
 
       .form-actions {
@@ -397,21 +423,20 @@
         border-radius: 999px;
         padding: 0.75rem 1.8rem;
         font-weight: 600;
-        font-size: 1rem;
         cursor: pointer;
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        transition: transform 0.18s ease, box-shadow 0.18s ease;
       }
 
       .form-actions button[type="submit"] {
-        background: linear-gradient(135deg, #36c3b4, #1f8a78);
-        color: #062c2b;
-        box-shadow: 0 12px 32px rgba(5, 28, 26, 0.4);
+        background: linear-gradient(135deg, var(--color-accent), var(--color-accent-strong));
+        color: #062522;
+        box-shadow: 0 14px 32px rgba(8, 48, 42, 0.4);
       }
 
       .form-actions button[type="button"] {
-        background: rgba(220, 255, 247, 0.18);
-        color: #dcfff7;
-        box-shadow: 0 12px 24px rgba(4, 20, 18, 0.35);
+        background: rgba(230, 255, 247, 0.18);
+        color: #e6fff8;
+        box-shadow: 0 12px 26px rgba(6, 34, 32, 0.32);
       }
 
       .form-actions button:hover,
@@ -421,44 +446,19 @@
 
       .form-status {
         min-height: 1.4rem;
-        color: #dcfff7;
+        color: #cffff3;
         font-weight: 600;
       }
 
       footer.site-footer {
-        padding: 2rem clamp(1.5rem, 6vw, 4rem);
-        color: rgba(235, 241, 255, 0.72);
-        background: rgba(4, 12, 30, 0.8);
-        display: grid;
-        gap: 1rem;
-        justify-items: center;
+        padding: 2rem clamp(1.5rem, 6vw, 3.5rem);
+        background: rgba(6, 16, 28, 0.85);
         text-align: center;
+        font-size: 0.95rem;
+        color: rgba(225, 236, 255, 0.7);
       }
 
-      footer.site-footer nav {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1.5rem;
-      }
-
-      footer.site-footer a {
-        color: rgba(235, 241, 255, 0.9);
-        text-decoration: none;
-        font-weight: 500;
-        transition: color 0.2s ease;
-      }
-
-      footer.site-footer a:hover,
-      footer.site-footer a:focus-visible {
-        color: #7fb8ff;
-      }
-
-      footer.site-footer p {
-        margin: 0;
-        font-size: 0.9rem;
-      }
-
-      @media (max-width: 720px) {
+      @media (max-width: 760px) {
         header.site-header {
           flex-direction: column;
           align-items: flex-start;
@@ -470,13 +470,12 @@
           text-align: center;
         }
 
-        .tab-panels {
-          padding: 1.5rem;
+        nav.tab-nav {
+          grid-template-columns: 1fr;
         }
 
-        .document-card iframe,
-        .document-card embed {
-          min-height: 260px;
+        .document-viewer {
+          max-height: none;
         }
 
         .form-actions {
@@ -485,7 +484,6 @@
 
         .form-actions button {
           flex: 1 1 auto;
-          text-align: center;
         }
       }
 
@@ -502,419 +500,467 @@
   <body>
     <header class="site-header">
       <div class="brand" aria-label="SAS Retail Services">
-        <span class="brand-logo" aria-hidden="true">SAS</span>
-        <span class="brand-text">SAS Retail Services</span>
+        <div class="brand-logo" aria-hidden="true">SAS</div>
+        <div class="brand-text">
+          <span>Employee Hub</span>
+          <span>SAS Retail Services</span>
+        </div>
       </div>
       <a class="login-button" href="#">Employee Login</a>
     </header>
 
     <main>
-      <section class="hero-section" aria-labelledby="page-title">
-        <h1 id="page-title">SAS Employee Hub</h1>
+      <section class="hero" aria-labelledby="page-title">
+        <h1 id="page-title">SAS Retail Services – Employee Hub</h1>
         <p>
-          Quick access to travel policies, onboarding resources, and conduct guidelines for the SAS Retail field team.
+          Review onboarding resources, travel instructions, hotel conduct, payroll calendars, and remodel SOPs without leaving this page.
         </p>
       </section>
 
-      <div class="tab-list" role="tablist" aria-label="Employee hub categories">
-        <button class="tab-button travel active" role="tab" aria-selected="true" aria-controls="tab-travel" id="tab-travel-button">
-          <strong>Travel</strong>
-          <span>Policies, checklists, and flight prep guidance</span>
-        </button>
-        <button class="tab-button new-hire" role="tab" aria-selected="false" aria-controls="tab-new-hire" id="tab-new-hire-button">
-          <strong>New Hire</strong>
-          <span>Onboarding documents and timekeeping setup</span>
-        </button>
-        <button class="tab-button policies" role="tab" aria-selected="false" aria-controls="tab-policies" id="tab-policies-button">
-          <strong>Policies</strong>
-          <span>Conduct expectations and hotel standards</span>
-        </button>
-      </div>
+      <nav class="tab-nav" role="tablist" aria-label="Employee hub sections">
+        <a id="tab-new-hire" href="#new-hire" data-target="new-hire" role="tab" aria-controls="new-hire" aria-selected="false">
+          <span class="label">New Hire Resources</span>
+          <span class="sub-label">Docs, expectations, questionnaire</span>
+        </a>
+        <a id="tab-travel" href="#travel" data-target="travel" role="tab" aria-controls="travel" aria-selected="false">
+          <span class="label">Travel Policies &amp; Prep</span>
+          <span class="sub-label">Policies, reminders, visuals</span>
+        </a>
+        <a id="tab-hotel" href="#hotel" data-target="hotel" role="tab" aria-controls="hotel" aria-selected="false">
+          <span class="label">Hotel &amp; Lodging Rules</span>
+          <span class="sub-label">Conduct expectations</span>
+        </a>
+        <a id="tab-payroll" href="#payroll" data-target="payroll" role="tab" aria-controls="payroll" aria-selected="false">
+          <span class="label">Payroll &amp; Scheduling</span>
+          <span class="sub-label">Calendars &amp; blackout dates</span>
+        </a>
+        <a id="tab-remodel" href="#remodel" data-target="remodel" role="tab" aria-controls="remodel" aria-selected="false">
+          <span class="label">Remodel SOPs</span>
+          <span class="sub-label">Approved task references</span>
+        </a>
+      </nav>
 
       <section class="tab-panels">
-        <article class="tab-panel active" id="tab-travel" role="tabpanel" aria-labelledby="tab-travel-button">
-          <div class="panel-heading">
-            <h2>Travel Policies &amp; Updates</h2>
-            <p>Downloadable guidance for remodel travel teams and in-field associates.</p>
-          </div>
-          <div class="document-grid">
-            <div class="document-card">
-              <h3>2026 SAS WFM Remodel Travel Team Policy</h3>
-              <div class="meta">Updated Oct 6, 2025</div>
-              <!-- TODO: Replace with actual doc paths -->
-              <iframe title="2026 SAS WFM Remodel Travel Team Policy" src="docs/2026-sas-wfm-travel-policy.pdf"></iframe>
-              <a class="download-link" href="docs/2026-sas-wfm-travel-policy.pdf">Download PDF</a>
-            </div>
-            <div class="document-card">
-              <h3>Local Travel Reminder</h3>
-              <div class="meta">Most recent field bulletin</div>
-              <!-- TODO: Replace with actual doc paths -->
-              <iframe title="Local Travel Reminder" src="docs/local-travel-reminder.pdf"></iframe>
-              <a class="download-link" href="docs/local-travel-reminder.pdf">Download PDF</a>
-            </div>
-            <div class="document-card">
-              <h3>Preparing for Flight Travel</h3>
-              <div class="meta">Updated June 2, 2025</div>
-              <!-- TODO: Replace with actual doc paths -->
-              <iframe title="Preparing for Flight Travel" src="docs/preparing-for-flight-travel.pdf"></iframe>
-              <a class="download-link" href="docs/preparing-for-flight-travel.pdf">Download PDF</a>
-            </div>
-            <div class="document-card">
-              <h3>Travel Update - 2nd Bag Fee</h3>
-              <div class="meta">Effective Feb 5, 2023</div>
-              <!-- TODO: Replace with actual doc paths -->
-              <iframe title="Travel Update - 2nd Bag Fee" src="docs/travel-update-second-bag-fee.pdf"></iframe>
-              <a class="download-link" href="docs/travel-update-second-bag-fee.pdf">Download PDF</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="tab-panel" id="tab-new-hire" role="tabpanel" aria-labelledby="tab-new-hire-button" hidden>
-          <div class="panel-heading">
-            <h2>Onboarding Docs &amp; Training</h2>
-            <p>Start strong with required templates, scheduling tools, and training materials.</p>
-          </div>
-          <div class="document-grid">
-            <div class="document-card">
-              <h3>Email Signature Line Setup Step By Step</h3>
-              <!-- TODO: Replace with actual doc paths -->
-              <iframe title="Email Signature Line Setup Step By Step" src="docs/email-signature-setup.pdf"></iframe>
-              <a class="download-link" href="docs/email-signature-setup.pdf">Download PDF</a>
-            </div>
-            <div class="document-card">
-              <h3>SAS Approved Tasks Remodel</h3>
-              <div class="meta">PPTX document – download to view</div>
-              <div class="placeholder-box">
-                PPTX document – view in Microsoft PowerPoint
-              </div>
-              <!-- TODO: Replace with actual doc paths -->
-              <a class="download-link" href="docs/sas-approved-tasks-remodel.pptx">Download PPTX</a>
-            </div>
-            <div class="document-card">
-              <h3>Time Off &amp; Payroll Calendar 2026</h3>
-              <!-- TODO: Replace with actual doc paths -->
-              <iframe title="Time Off & Payroll Calendar 2026" src="docs/time-off-payroll-calendar-2026.pdf"></iframe>
-              <a class="download-link" href="docs/time-off-payroll-calendar-2026.pdf">Download PDF</a>
-            </div>
+        <article id="new-hire" class="tab-panel" role="tabpanel" aria-labelledby="tab-new-hire" tabindex="0" aria-hidden="true">
+          <div class="panel-header">
+            <h2>New Hire Resources &amp; Required Questionnaire</h2>
+            <p>Select a resource to load it instantly, then submit the questionnaire so scheduling can finalize your onboarding.</p>
           </div>
 
-          <section class="questionnaire-section" aria-labelledby="questionnaire-title">
+          <div class="button-strip">
+            <h3>New Hire Documents</h3>
+            <div class="newhire-buttons" data-buttons="new-hire"></div>
+          </div>
+
+          <section class="document-viewer" data-viewer="new-hire" aria-live="polite">
+            <p class="viewer-placeholder">Choose a document to load the full content here.</p>
+          </section>
+
+          <section class="questionnaire" aria-labelledby="questionnaire-title">
             <header>
               <h3 id="questionnaire-title">New Hire Questionnaire – Required Info Before Scheduling</h3>
-              <p>Complete every required field so we can confirm travel logistics and onboarding details.</p>
+              <p>Complete every required field so the Travel &amp; Scheduling team has your up-to-date contact and availability details.</p>
             </header>
             <!-- TODO: Hook to backend API when ready -->
-            <form id="new-hire-questionnaire" novalidate>
+            <form id="new-hire-form" novalidate>
               <div class="form-grid">
                 <div class="form-field">
-                  <label for="sex-real-id">Sex as listed on Real ID</label>
-                  <select id="sex-real-id" name="sex-real-id" required>
-                    <option value="" disabled selected>Select one</option>
-                    <option value="Male">Male</option>
-                    <option value="Female">Female</option>
-                    <option value="Other">Other</option>
-                  </select>
-                </div>
-                <fieldset class="form-fieldset">
-                  <legend>Valid Photo ID or Passport?</legend>
-                  <div class="radio-group" role="radiogroup" aria-required="true">
-                    <label class="radio-option" for="photo-id-yes">
-                      <input type="radio" id="photo-id-yes" name="photo-id" value="Yes" required />
-                      Yes
-                    </label>
-                    <label class="radio-option" for="photo-id-no">
-                      <input type="radio" id="photo-id-no" name="photo-id" value="No" />
-                      No
-                    </label>
-                  </div>
-                </fieldset>
-                <div class="form-field">
-                  <label for="employee-name">First and Last Name (as shown on ID)</label>
-                  <input id="employee-name" name="employee-name" type="text" required />
+                  <label for="nh-name">Full Name</label>
+                  <input id="nh-name" name="name" type="text" required />
                 </div>
                 <div class="form-field">
-                  <label for="dob">Date of Birth</label>
-                  <input id="dob" name="dob" type="date" required />
+                  <label for="nh-phone">Preferred Phone</label>
+                  <input id="nh-phone" name="phone" type="tel" required />
                 </div>
                 <div class="form-field">
-                  <label for="email">Preferred Email Address</label>
-                  <input id="email" name="email" type="email" required />
+                  <label for="nh-email">Email Address</label>
+                  <input id="nh-email" name="email" type="email" required />
                 </div>
                 <div class="form-field">
-                  <label for="phone">Preferred Cell Phone</label>
-                  <input id="phone" name="phone" type="tel" required />
-                </div>
-                <div class="form-field">
-                  <label for="airport">Closest Major Airport</label>
-                  <input id="airport" name="airport" type="text" required />
-                </div>
-                <div class="form-field">
-                  <label for="emergency-name">Emergency Contact Name</label>
-                  <input id="emergency-name" name="emergency-name" type="text" required />
-                </div>
-                <div class="form-field">
-                  <label for="emergency-relationship">Emergency Contact Relationship</label>
-                  <input id="emergency-relationship" name="emergency-relationship" type="text" required />
-                </div>
-                <div class="form-field">
-                  <label for="emergency-phone">Emergency Contact Phone Number</label>
-                  <input id="emergency-phone" name="emergency-phone" type="tel" required />
-                </div>
-                <div class="form-field">
-                  <label for="languages">Other languages spoken (optional)</label>
-                  <input id="languages" name="languages" type="text" placeholder="Optional" />
-                </div>
-                <div class="form-field">
-                  <label for="polo-size">Polo Shirt Size</label>
-                  <select id="polo-size" name="polo-size" required>
-                    <option value="" disabled selected>Select size</option>
-                    <option value="XS">XS</option>
-                    <option value="S">S</option>
-                    <option value="M">M</option>
-                    <option value="L">L</option>
-                    <option value="XL">XL</option>
-                    <option value="XXL">XXL</option>
-                  </select>
-                </div>
-                <fieldset class="form-fieldset">
-                  <legend>Reliable Transportation?</legend>
-                  <div class="radio-group" role="radiogroup" aria-required="true">
-                    <label class="radio-option" for="transportation-yes">
-                      <input type="radio" id="transportation-yes" name="transportation" value="Yes" required />
-                      Yes
-                    </label>
-                    <label class="radio-option" for="transportation-no">
-                      <input type="radio" id="transportation-no" name="transportation" value="No" />
-                      No
-                    </label>
-                  </div>
-                </fieldset>
-                <fieldset class="form-fieldset">
-                  <legend>Willing to work local (up to 6 hrs)?</legend>
-                  <div class="radio-group" role="radiogroup" aria-required="true">
-                    <label class="radio-option" for="local-work-yes">
-                      <input type="radio" id="local-work-yes" name="local-work" value="Yes" required />
-                      Yes
-                    </label>
-                    <label class="radio-option" for="local-work-no">
-                      <input type="radio" id="local-work-no" name="local-work" value="No" />
-                      No
-                    </label>
-                  </div>
-                </fieldset>
-                <fieldset class="form-fieldset">
-                  <legend>Valid Driver’s License?</legend>
-                  <div class="radio-group" role="radiogroup" aria-required="true">
-                    <label class="radio-option" for="drivers-license-yes">
-                      <input type="radio" id="drivers-license-yes" name="drivers-license" value="Yes" required />
-                      Yes
-                    </label>
-                    <label class="radio-option" for="drivers-license-no">
-                      <input type="radio" id="drivers-license-no" name="drivers-license" value="No" />
-                      No
-                    </label>
-                  </div>
-                </fieldset>
-                <fieldset class="form-fieldset">
-                  <legend>Willing to be a driver (if over 21)?</legend>
-                  <div class="radio-group" role="radiogroup" aria-required="true">
-                    <label class="radio-option" for="driver-willing-yes">
-                      <input type="radio" id="driver-willing-yes" name="driver-willing" value="Yes" required />
-                      Yes
-                    </label>
-                    <label class="radio-option" for="driver-willing-no">
-                      <input type="radio" id="driver-willing-no" name="driver-willing" value="No" />
-                      No
-                    </label>
-                  </div>
-                </fieldset>
-                <fieldset class="form-fieldset">
-                  <legend>Any current rental car issues (National/Enterprise)?</legend>
-                  <div class="radio-group" role="radiogroup" aria-required="true">
-                    <label class="radio-option" for="rental-issues-yes">
-                      <input type="radio" id="rental-issues-yes" name="rental-issues" value="Yes" required />
-                      Yes
-                    </label>
-                    <label class="radio-option" for="rental-issues-no">
-                      <input type="radio" id="rental-issues-no" name="rental-issues" value="No" />
-                      No
-                    </label>
-                  </div>
-                </fieldset>
-                <div class="form-field-wide">
-                  <label for="address">Full Address</label>
-                  <textarea id="address" name="address" required></textarea>
-                </div>
-                <div class="form-field-wide">
-                  <label for="time-off">Known time off dates? (optional)</label>
-                  <textarea id="time-off" name="time-off" placeholder="Optional"></textarea>
-                </div>
-                <div class="form-field-wide">
-                  <label for="availability-restrictions">Travel/availability restrictions? (optional)</label>
-                  <textarea id="availability-restrictions" name="availability-restrictions" placeholder="Optional"></textarea>
-                </div>
-                <div class="form-field">
-                  <label for="start-date">Earliest available start date</label>
-                  <input id="start-date" name="start-date" type="date" required />
-                </div>
-                <div class="form-field">
-                  <label for="referred-by">Referred by someone? (optional)</label>
-                  <input id="referred-by" name="referred-by" type="text" placeholder="Optional" />
-                </div>
-                <div class="form-field-wide">
-                  <label for="preferred-roommate">Preferred travel/roommate (optional, specify which or both)</label>
-                  <textarea id="preferred-roommate" name="preferred-roommate" placeholder="Optional"></textarea>
+                  <label for="nh-city">City &amp; State</label>
+                  <input id="nh-city" name="city" type="text" required />
                 </div>
               </div>
+
+              <div class="form-field">
+                <label for="nh-availability">Availability Window</label>
+                <textarea id="nh-availability" name="availability" placeholder="Example: Available weekdays after 3 PM, weekends open." required></textarea>
+              </div>
+
+              <div class="form-field">
+                <label for="nh-referral">Referred by someone? (optional)</label>
+                <input id="nh-referral" name="referral" type="text" placeholder="Optional" />
+              </div>
+
+              <div class="form-field">
+                <label for="nh-comments">Additional comments (optional)</label>
+                <textarea id="nh-comments" name="comments" placeholder="Add travel notes, restrictions, or questions."></textarea>
+              </div>
+
               <div class="form-actions">
-                <button type="submit">Submit</button>
-                <button type="button" id="clear-questionnaire">Clear</button>
+                <button type="submit">Submit Questionnaire</button>
+                <button type="button" id="nh-clear">Clear</button>
               </div>
               <div class="form-status" id="form-status" aria-live="polite"></div>
             </form>
           </section>
         </article>
 
-        <article class="tab-panel" id="tab-policies" role="tabpanel" aria-labelledby="tab-policies-button" hidden>
-          <div class="panel-heading">
-            <h2>Conduct &amp; Hotel Guidelines</h2>
-            <p>Keep teams aligned to SAS standards before, during, and after remodel projects.</p>
+        <article id="travel" class="tab-panel" role="tabpanel" aria-labelledby="tab-travel" tabindex="0" aria-hidden="true">
+          <div class="panel-header">
+            <h2>Travel Documents and Policies</h2>
+            <p>Everything you need before wheels-up: policy handbook, local travel reminders, flight prep checklist, and current baggage updates.</p>
           </div>
-          <div class="document-grid">
-            <div class="document-card">
-              <h3>HOTEL ETIQUETTE 2026</h3>
-              <div class="meta">Revised Oct 22, 2025</div>
-              <!-- TODO: Replace with actual doc paths -->
-              <iframe title="HOTEL ETIQUETTE 2026" src="docs/hotel-etiquette-2026.pdf"></iframe>
-              <a class="download-link" href="docs/hotel-etiquette-2026.pdf">Download PDF</a>
-            </div>
+
+          <div class="button-strip">
+            <h3>Travel Resources</h3>
+            <div class="travel-buttons" data-buttons="travel"></div>
           </div>
+
+          <section class="document-viewer" data-viewer="travel" aria-live="polite">
+            <p class="viewer-placeholder">Select a travel policy, reminder, or visual reference to view it here.</p>
+          </section>
+        </article>
+
+        <article id="hotel" class="tab-panel" role="tabpanel" aria-labelledby="tab-hotel" tabindex="0" aria-hidden="true">
+          <div class="panel-header">
+            <h2>Workplace Conduct &amp; Hotel Policies</h2>
+            <p>Review expectations for shared lodging, quiet hours, and respectful conduct while on assignment.</p>
+          </div>
+
+          <div class="button-strip">
+            <h3>Hotel &amp; Lodging Resources</h3>
+            <div class="policy-buttons" data-buttons="hotel"></div>
+          </div>
+
+          <section class="document-viewer" data-viewer="hotel" aria-live="polite">
+            <p class="viewer-placeholder">Pick a hotel policy document to load its contents.</p>
+          </section>
+        </article>
+
+        <article id="payroll" class="tab-panel" role="tabpanel" aria-labelledby="tab-payroll" tabindex="0" aria-hidden="true">
+          <div class="panel-header">
+            <h2>Time Off and Payroll Calendar</h2>
+            <p>Stay aligned with payroll cutoffs, blackout dates, and timekeeping expectations.</p>
+          </div>
+
+          <div class="button-strip">
+            <h3>Payroll Resources</h3>
+            <div class="payroll-buttons" data-buttons="payroll"></div>
+          </div>
+
+          <section class="document-viewer" data-viewer="payroll" aria-live="polite">
+            <p class="viewer-placeholder">Choose a payroll resource to view the full calendar.</p>
+          </section>
+        </article>
+
+        <article id="remodel" class="tab-panel" role="tabpanel" aria-labelledby="tab-remodel" tabindex="0" aria-hidden="true">
+          <div class="panel-header">
+            <h2>Approved Tasks for Remodel Projects</h2>
+            <p>Reference the official remodel SOP deck for task approvals, scope, and crew expectations.</p>
+          </div>
+
+          <div class="button-strip">
+            <h3>Remodel SOPs</h3>
+            <div class="remodel-buttons" data-buttons="remodel"></div>
+          </div>
+
+          <section class="document-viewer" data-viewer="remodel" aria-live="polite">
+            <p class="viewer-placeholder">Select a remodel SOP to review guidance.</p>
+          </section>
         </article>
       </section>
     </main>
 
     <footer class="site-footer">
-      <nav aria-label="Footer links">
-        <a href="#">FAQ</a>
-        <a href="#">Contact Travel Team</a>
-        <a href="#">System Login</a>
-        <!-- <a href="#">Oracle Login</a> -->
-      </nav>
-      <p>© 2025 SAS Retail Services. All rights reserved.</p>
+      © 2025 SAS Retail Services. All rights reserved.
     </footer>
 
     <script>
       (function () {
-        const tabs = document.querySelectorAll('.tab-button');
+        const documents = {
+          // TODO: replace with actual path when production docs are ready
+          'new-hire': [
+            {
+              id: 'teammate-handbook',
+              title: '2025 Teammate Handbook',
+              path: 'newhire-pages/2025-teammate-handbook.html',
+              type: 'html',
+            },
+            {
+              id: 'email-signature',
+              title: 'Email Signature Line Setup Guide',
+              path: 'newhire-pages/email-signature-line-setup-step-by-step.html',
+              type: 'html',
+            },
+            {
+              id: 'sas-approved-tasks',
+              title: 'SAS Approved Tasks Overview',
+              path: 'docs/sas-approved-tasks-remodel.pptx',
+              type: 'download',
+              note: 'Download and open this PowerPoint deck to review approved remodel tasks.',
+            },
+          ],
+          travel: [
+            {
+              id: 'remodel-travel-policy',
+              title: 'Remodel Travel Team Policy',
+              path: 'travel-pages/travel.html',
+              type: 'html',
+            },
+            {
+              id: 'local-travel-reminder',
+              title: 'Local Travel Reminder',
+              path: 'travel-pages/local-travel-reminder.html',
+              type: 'html',
+            },
+            {
+              id: 'flight-prep',
+              title: 'Preparing for Flight Travel',
+              path: 'travel-pages/preparing-for-flight-travel.html',
+              type: 'html',
+            },
+            {
+              id: 'second-bag-fee',
+              title: 'Travel Update – 2nd Bag Fee',
+              path: 'travel-pages/travel-update-2nd-bag-fee.html',
+              type: 'html',
+            },
+            {
+              id: 'badge-sample',
+              title: 'SAS Retail Travel Team Badge Sample',
+              path: 'docs/04B265F5-3DE5-4188-B448-D60BA06A00C9.jpeg',
+              type: 'image',
+              caption: 'Reference badge design for travel teams.',
+            },
+            {
+              id: 'driver-setup',
+              title: 'Driver Setup Example',
+              path: 'docs/EAFE7992-CEA4-4120-BD95-9CCAAC7B2976.jpeg',
+              type: 'image',
+              caption: 'Sample driver configuration for shared vehicles.',
+            },
+          ],
+          hotel: [
+            {
+              id: 'hotel-etiquette',
+              title: 'Hotel Etiquette 2026',
+              path: 'policy-pages/hotel-etiquette-2026.html',
+              type: 'html',
+            },
+          ],
+          payroll: [
+            {
+              id: 'time-off-calendar',
+              title: 'Time Off & Payroll Calendar 2026',
+              path: 'payroll-pages/save-this-file-time-off-payroll-calendar-2026.html',
+              type: 'html',
+            },
+          ],
+          remodel: [
+            {
+              id: 'sas-approved-tasks-remodel',
+              title: 'SAS Approved Tasks Remodel Deck',
+              path: 'docs/sas-approved-tasks-remodel.pptx',
+              type: 'download',
+              note: 'Download and review the remodel SOP deck in Microsoft PowerPoint.',
+            },
+          ],
+        };
+
+        const tabLinks = document.querySelectorAll('nav.tab-nav a[data-target]');
         const panels = document.querySelectorAll('.tab-panel');
 
-        const activateTab = (targetId) => {
-          tabs.forEach((tab) => {
-            const isActive = tab.getAttribute('aria-controls') === targetId;
-            tab.classList.toggle('active', isActive);
-            tab.setAttribute('aria-selected', String(isActive));
-            tab.setAttribute('tabindex', isActive ? '0' : '-1');
-          });
-
-          panels.forEach((panel) => {
-            const isActive = panel.id === targetId;
-            panel.classList.toggle('active', isActive);
-            if (isActive) {
-              panel.removeAttribute('hidden');
-            } else {
-              panel.setAttribute('hidden', '');
-            }
+        const syncButtons = () => {
+          Object.entries(documents).forEach(([category, docs]) => {
+            const buttonContainer = document.querySelector(`[data-buttons="${category}"]`);
+            if (!buttonContainer) return;
+            buttonContainer.innerHTML = '';
+            docs.forEach((doc, index) => {
+              const button = document.createElement('button');
+              button.type = 'button';
+              button.className = 'doc-btn';
+              button.textContent = doc.title;
+              button.dataset.category = category;
+              button.dataset.docId = doc.id;
+              button.addEventListener('click', () => loadDocument(category, doc.id));
+              if (index === 0) {
+                button.classList.add('active');
+              }
+              buttonContainer.appendChild(button);
+            });
           });
         };
 
-        tabs.forEach((tab) => {
-          tab.addEventListener('click', () => activateTab(tab.getAttribute('aria-controls')));
-          tab.addEventListener('keydown', (event) => {
-            if (event.key === 'Enter' || event.key === ' ') {
-              event.preventDefault();
-              activateTab(tab.getAttribute('aria-controls'));
+        const getHashTarget = () => {
+          const hash = window.location.hash.replace('#', '');
+          return hash && documents[hash] ? hash : 'new-hire';
+        };
+
+        const activateTab = (targetId) => {
+          tabLinks.forEach((link) => {
+            const active = link.dataset.target === targetId;
+            link.classList.toggle('active', active);
+            link.setAttribute('aria-selected', String(active));
+            link.setAttribute('tabindex', active ? '0' : '-1');
+          });
+
+          panels.forEach((panel) => {
+            const active = panel.id === targetId;
+            panel.classList.toggle('active', active);
+            panel.setAttribute('aria-hidden', String(!active));
+          });
+
+          const defaultDoc = documents[targetId]?.[0];
+          if (defaultDoc) {
+            setActiveButton(targetId, defaultDoc.id);
+            loadDocument(targetId, defaultDoc.id);
+          } else {
+            const viewer = document.querySelector(`[data-viewer="${targetId}"]`);
+            if (viewer) {
+              viewer.innerHTML = '<p class="viewer-placeholder">No documents available for this section yet.</p>';
             }
+          }
+        };
+
+        const setActiveButton = (category, docId) => {
+          document.querySelectorAll(`.doc-btn[data-category="${category}"]`).forEach((btn) => {
+            btn.classList.toggle('active', btn.dataset.docId === docId);
+          });
+        };
+
+        const loadDocument = (category, docId) => {
+          const viewer = document.querySelector(`[data-viewer="${category}"]`);
+          if (!viewer) return;
+
+          const doc = documents[category]?.find((item) => item.id === docId);
+          if (!doc) {
+            viewer.innerHTML = '<p class="viewer-placeholder">Document not found.</p>';
+            return;
+          }
+
+          if (doc.type === 'html') {
+            viewer.innerHTML = '<p class="viewer-placeholder">Loading document…</p>';
+            fetch(doc.path)
+              .then((response) => {
+                if (!response.ok) {
+                  throw new Error('Unable to load document');
+                }
+                return response.text();
+              })
+              .then((htmlText) => {
+                const parser = new DOMParser();
+                const parsed = parser.parseFromString(htmlText, 'text/html');
+                const bodyContent = parsed.body ? parsed.body.innerHTML : htmlText;
+                viewer.innerHTML = `<article class="document-content">${bodyContent || '<p>No content available.</p>'}</article>`;
+                setActiveButton(category, docId);
+              })
+              .catch(() => {
+                viewer.innerHTML = '<p class="viewer-placeholder">Unable to load this document. Verify the file path or convert the source document to HTML.</p>';
+              });
+            return;
+          }
+
+          if (doc.type === 'image') {
+            viewer.innerHTML = '<p class="viewer-placeholder">Loading image…</p>';
+            fetch(doc.path)
+              .then((response) => {
+                if (!response.ok) {
+                  throw new Error('Missing asset');
+                }
+                return response.blob();
+              })
+              .then((blob) => {
+                const objectUrl = URL.createObjectURL(blob);
+                viewer.innerHTML = `
+                  <figure class="image-wrapper">
+                    <img src="${objectUrl}" alt="${doc.title}" loading="lazy" />
+                    <figcaption>${doc.caption || ''}</figcaption>
+                  </figure>
+                `;
+                setActiveButton(category, docId);
+              })
+              .catch(() => {
+                viewer.innerHTML = '<p class="viewer-placeholder">Image asset is not available yet. Upload it to /public/docs and update the path.</p>';
+              });
+            return;
+          }
+
+          viewer.innerHTML = `
+            <div class="download-callout">
+              <p>${doc.note || 'This file must be downloaded to view.'}</p>
+              <a class="download-link" href="${doc.path}" target="_blank" rel="noopener">Download file</a>
+            </div>
+          `;
+          setActiveButton(category, docId);
+        };
+
+        tabLinks.forEach((link) => {
+          link.addEventListener('click', (event) => {
+            event.preventDefault();
+            const targetId = link.dataset.target;
+            if (!targetId) return;
+            history.replaceState(null, '', `#${targetId}`);
+            activateTab(targetId);
+            const panel = document.getElementById(targetId);
+            panel?.focus({ preventScroll: false });
           });
         });
 
-        activateTab('tab-travel');
+        window.addEventListener('hashchange', () => activateTab(getHashTarget()));
 
-        const form = document.getElementById('new-hire-questionnaire');
+        syncButtons();
+        activateTab(getHashTarget());
+
+        const form = document.getElementById('new-hire-form');
         const statusEl = document.getElementById('form-status');
-        const clearBtn = document.getElementById('clear-questionnaire');
+        const clearBtn = document.getElementById('nh-clear');
+
+        const buildMailBody = (formData) => {
+          const lines = [
+            'New Hire Questionnaire – Required Info Before Scheduling',
+            '-------------------------------------------------------',
+            `Full Name: ${formData.get('name')}`,
+            `Preferred Phone: ${formData.get('phone')}`,
+            `Email Address: ${formData.get('email')}`,
+            `City & State: ${formData.get('city')}`,
+            `Availability Window: ${formData.get('availability')}`,
+            `Referral: ${formData.get('referral') || 'N/A'}`,
+            `Additional Comments: ${formData.get('comments') || 'N/A'}`,
+          ];
+          return lines.join('\n');
+        };
 
         if (form) {
-          const radioGroups = ['photo-id', 'transportation', 'local-work', 'drivers-license', 'driver-willing', 'rental-issues'];
-
-          const validateRadios = () => {
-            return radioGroups.every((name) => {
-              const radios = form.querySelectorAll(`input[name="${name}"]`);
-              return Array.from(radios).some((radio) => radio.checked);
-            });
-          };
-
-          const buildEmailBody = (formData) => {
-            const lines = [
-              'New Hire Questionnaire – Required Info Before Scheduling',
-              '-------------------------------------------------------',
-              `Sex on Real ID: ${formData.get('sex-real-id')}`,
-              `Valid Photo ID or Passport: ${formData.get('photo-id')}`,
-              `Name (as on ID): ${formData.get('employee-name')}`,
-              `Date of Birth: ${formData.get('dob')}`,
-              `Full Address: ${formData.get('address')}`,
-              `Preferred Email: ${formData.get('email')}`,
-              `Preferred Cell Phone: ${formData.get('phone')}`,
-              `Closest Major Airport: ${formData.get('airport')}`,
-              'Emergency Contact:',
-              `  Name: ${formData.get('emergency-name')}`,
-              `  Relationship: ${formData.get('emergency-relationship')}`,
-              `  Phone: ${formData.get('emergency-phone')}`,
-              `Other languages spoken: ${formData.get('languages') || 'N/A'}`,
-              `Polo Shirt Size: ${formData.get('polo-size')}`,
-              `Reliable Transportation: ${formData.get('transportation')}`,
-              `Willing to work local (up to 6 hrs): ${formData.get('local-work')}`,
-              `Valid Driver’s License: ${formData.get('drivers-license')}`,
-              `Willing to be a driver (if over 21): ${formData.get('driver-willing')}`,
-              `Current rental car issues (National/Enterprise): ${formData.get('rental-issues')}`,
-              `Known time off dates: ${formData.get('time-off') || 'N/A'}`,
-              `Travel/availability restrictions: ${formData.get('availability-restrictions') || 'N/A'}`,
-              `Earliest available start date: ${formData.get('start-date')}`,
-              `Referred by: ${formData.get('referred-by') || 'N/A'}`,
-              `Preferred travel/roommate: ${formData.get('preferred-roommate') || 'N/A'}`,
-            ];
-            return lines.join('\n');
-          };
-
           form.addEventListener('submit', (event) => {
             event.preventDefault();
             statusEl.textContent = '';
 
-            const formValid = form.checkValidity() && validateRadios();
-            if (!formValid) {
+            if (!form.checkValidity()) {
               form.reportValidity();
               statusEl.textContent = 'Please complete all required fields before submitting.';
               return;
             }
 
-            const formData = new FormData(form);
+            const data = new FormData(form);
             const subject = encodeURIComponent('New Hire Questionnaire Response');
-            const body = encodeURIComponent(buildEmailBody(formData));
-            const mailtoLink = `mailto:admin@sasretailservices.com?subject=${subject}&body=${body}`;
+            const body = encodeURIComponent(buildMailBody(data));
+            const mailtoHref = `mailto:admin@sasretailservices.com?subject=${subject}&body=${body}`;
 
-            let mailtoOpened = false;
+            let opened = false;
             try {
-              const mailtoWindow = window.open(mailtoLink);
-              if (mailtoWindow !== null) {
-                mailtoOpened = true;
+              const mailWindow = window.open(mailtoHref);
+              if (mailWindow !== null) {
+                opened = true;
               }
             } catch (error) {
-              mailtoOpened = false;
+              opened = false;
             }
 
-            if (!mailtoOpened) {
-              statusEl.textContent = 'Thank you! Your responses have been recorded. We will reach out if we need anything else.';
+            if (opened) {
+              statusEl.textContent = 'Email draft opened. Review and send to complete your submission.';
             } else {
-              statusEl.textContent = 'Email draft opened. Please review and send to complete your submission.';
+              statusEl.textContent = 'Thank you! Your responses have been recorded for scheduling follow-up.';
             }
 
             form.reset();

@@ -1,0 +1,19 @@
+.newhire-buttons, .travel-buttons, .policy-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+  justify-content: center;
+}
+.doc-btn {
+  background-color: #2979FF;
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.doc-btn:hover {
+  background-color: #1A5DFF;
+}

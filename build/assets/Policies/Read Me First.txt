@@ -1,0 +1,14 @@
+## Policies Documents Portal
+
+<!-- Codex: Scan the /Policies folder, extract file names + content -->
+
+<!-- For each file in /Policies -->
+<!-- Create a button that links to a dedicated document page -->
+
+<div class="policy-buttons">
+  <!-- Codex Loop Start -->
+  <a href="/policy-pages/{filename-without-ext}.html">
+    <button class="doc-btn">{Document Title}</button>
+  </a>
+  <!-- Codex Loop End -->
+</div>
